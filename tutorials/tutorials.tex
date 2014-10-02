@@ -28,21 +28,49 @@ Give an known example, or explain one, for each of this network topologies:
   \end{enumerate}
 
 \subsection{TCP connection}
-According to TCP (\color{blue}\href{http://tools.ietf.org/html/rfc761}{RFC761 (January 1980)}) \color{black}, what are the sequence used in order to establish a connection between two hosts ?
+According to TCP (\color{blue}\href{http://tools.ietf.org/html/rfc761}{RFC761 (January 1980)}) \color{black}, what are the sequence used in order to establish a connection between two hosts?
 
-\subsection{TCP or UDP ?}
+\subsection{TCP or UDP?}
 \subsubsection{Sensors}
 You are creating a network application using sensors. The sensors can receive settings (rate of measurement, range...) and they continuously send their measurements.
   \begin{enumerate}
-    \item Should settings' packets be sent with UDP or TCP ? Why ?
-    \item Should measurements packets be sent with UDP or TCP ? why ?
+    \item Should settings' packets be sent with UDP or TCP? Why?
+    \item Should measurements packets be sent with UDP or TCP? why?
+  \end{enumerate}
+\subsubsection{Website}
+Does HTTP (\color{blue}\href{http://tools.ietf.org/html/rfc2616}{RFC2616 (June 1999)}) \color{black} rely on TCP or UDP?
+
+\subsection{FTP}
+\subsubsection{Is FTP secure?}
+According to the file \color{blue}\href{http://teaching.auzias.net/db/ftp-connect.pcap}{ftp-connect.pcap} \color{black} is FTP secure? What could you do to use it more securely?
+\subsubsection{FTP and TCP}
+According to the file \color{blue}\href{http://teaching.auzias.net/db/ftp-disconnect.pcap}{ftp-disconnect.pcap} \color{black} does FTP respect the TCP protocol to close a connection?
+
+\subsection{DNS}
+\subsubsection{Some news}
+According to the file \color{blue}\href{http://teaching.auzias.net/db/nslookup.pcap}{nslookup.pcap} \color{black} what is:
+  \begin{enumerate}
+    \item the DNS server ?
+    \item the domain name for which the IP address is needed ?
+    \item the IP address of the domain ?
+  \end{enumerate}
+\subsubsection{Which one?}
+According to the file \color{blue}\href{http://teaching.auzias.net/db/nslookup-whoseone.com.pcap}{nslookup-whoseone.com.pcap} \color{black} what is:
+  \begin{enumerate}
+    \item the DNS server ?
+    \item the domain name for which the IP address is needed ?
+    \item the IP address of the domain ?
   \end{enumerate}
 
-\subsubsection{Website}
-Does HTTP (\color{blue}\href{http://tools.ietf.org/html/rfc2616}{RFC2616 (June 1999)}) \color{black} rely on TCP or UDP ?
-
-\subsection{Is FTP secure ?}
-According to the file \color{blue}\href{https://github.com/auzias/network-courses/db/ftp.pcap}{ftp.pcap} \color{black} is FTP secure ? How could it be more secure ?
-
+\subsection{Ping-pong}
+\subsubsection{Are you there?}
+According to the file \color{blue}\href{http://teaching.auzias.net/db/ping.pcap}{ping.pcap} \color{black}:
+  \begin{enumerate}
+    \item what is the node 127.0.0.1 doing ?
+    \item Is the node 127.0.0.2 on the network ?
+    \item the IP address of the domain ?
+  \end{enumerate}
+\subsubsection{Who has this IP?}
+According to the file \color{blue}\href{http://teaching.auzias.net/db/arp.pcap}{arp.pcap} \color{black} and to ARP (\color{blue}\href{http://tools.ietf.org/html/rfc826}{RFC826 (November 1982)}) \color{black}. What is trying to do the source ? What ARP is used for ?
 
 \end{document}
