@@ -10,6 +10,7 @@
 \usepackage{wrapfig}
 \usepackage{amsmath}
 \usepackage{hyperref}
+\bibliographystyle{plain}
 
 
 \title{Network Computing courses}
@@ -63,27 +64,28 @@
   \end{frame}
 
   \begin{frame}
+    \frametitle{Course details}
     \begin{columns}
       \column{.3\textwidth}
-	\begin{figure}[t]
-	  \centering
-	  \includegraphics[height=5cm]{./imgs/marks.jpg}
-	  \label{fig:marks}
-	\end{figure}
+        \begin{figure}[t]
+          \centering
+          \includegraphics[height=5cm]{./imgs/marks.jpg}
+          \label{fig:marks}
+        \end{figure}
       \column{.7\textwidth}
-	\begin{block}{Evaluation}
-	  \begin{itemize}
-	    \item Short test at the beginning of every lesson (5 min) ?
-	    \item Project
-	    \item Final exam (1 hour)
-	    \item All same weighting
-	  \end{itemize}
-	\end{block}
-	\begin{block}{Material}
-	  \begin{itemize}
-	    \item Slides available at \color{blue}\href{http://teaching.auzias.net}{teaching.auzias.net} \color{black} (github too)
-	  \end{itemize}
-	\end{block}
+        \begin{block}{Evaluation}
+          \begin{itemize}
+            \item Short test at the beginning of every lesson (5 min) ?
+            \item Project
+            \item Final exam (1 hour)
+            \item All same weighting
+          \end{itemize}
+        \end{block}
+        \begin{block}{Material}
+          \begin{itemize}
+            \item Slides available at \color{blue}\href{http://teaching.auzias.net}{teaching.auzias.net} \color{black} (github too)
+          \end{itemize}
+        \end{block}
     \end{columns}
   \end{frame}
 
@@ -93,5 +95,9 @@
 \include{2-lower_layers}
 
 \include{3-upper_layers}
-
+\section*{Conclusion}
+  \begin{frame}
+    \frametitle{References}
+    \bibliography{ref.bib}
+  \end{frame}
 \end{document}
