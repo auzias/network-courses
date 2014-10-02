@@ -19,8 +19,17 @@
 
 
 \section{Introduction}
+\subsection{Classification}
+Give a concrete example of each of the following kinds of networks (name some devices):
+  \begin{enumerate}
+    \item BAN,
+    \item PAN,
+    \item LAN,
+    \item WAN.
+  \end{enumerate}
+
 \subsection{Topologies}
-Give an known example, or explain one, for each of this network topologies:
+Give a concrete example of each of the following network topologies:
   \begin{enumerate}
     \item Bus,
     \item Star,
@@ -28,17 +37,17 @@ Give an known example, or explain one, for each of this network topologies:
   \end{enumerate}
 
 \subsection{TCP connection}
-According to TCP (\color{blue}\href{http://tools.ietf.org/html/rfc761}{RFC761 (January 1980)}) \color{black}, what are the sequence used in order to establish a connection between two hosts?
+According to TCP (\color{blue}\href{http://tools.ietf.org/html/rfc761}{RFC761 (January 1980)}) \color{black}, what are the sequences used in order to establish a connection between two hosts?
 
 \subsection{TCP or UDP?}
 \subsubsection{Sensors}
-You are creating a network application using sensors. The sensors can receive settings (rate of measurement, range...) and they continuously send their measurements.
+You are creating a network application using sensors. The sensors can receive requests to change their settings (rate of measurement, range...) and they continuously send their measurements.
   \begin{enumerate}
-    \item Should settings' packets be sent with UDP or TCP? Why?
-    \item Should measurements packets be sent with UDP or TCP? why?
+    \item Should request packets (settings) be sent with UDP or TCP? Why?
+    \item Should measurement packets be sent with UDP or TCP? Why?
   \end{enumerate}
 \subsubsection{Website}
-Does HTTP (\color{blue}\href{http://tools.ietf.org/html/rfc2616}{RFC2616 (June 1999)}) \color{black} rely on TCP or UDP?
+Does HTTP (\color{blue}\href{http://tools.ietf.org/html/rfc2616}{RFC2616 (June 1999)}) \color{black} rely on TCP or UDP? Why?
 
 \subsection{FTP}
 \subsubsection{Is FTP secure?}
@@ -50,27 +59,26 @@ According to the file \color{blue}\href{http://teaching.auzias.net/db/ftp-discon
 \subsubsection{Some news}
 According to the file \color{blue}\href{http://teaching.auzias.net/db/nslookup.pcap}{nslookup.pcap} \color{black} what is:
   \begin{enumerate}
-    \item the DNS server ?
-    \item the domain name for which the IP address is needed ?
-    \item the IP address of the domain ?
-  \end{enumerate}
+    \item the DNS server?
+    \item the domain name for which the IP address is needed?
+    \item the IP address of the domain?
+  \end{enumerate}n
 \subsubsection{Which one?}
 According to the file \color{blue}\href{http://teaching.auzias.net/db/nslookup-whoseone.com.pcap}{nslookup-whoseone.com.pcap} \color{black} what is:
   \begin{enumerate}
-    \item the DNS server ?
-    \item the domain name for which the IP address is needed ?
-    \item the IP address of the domain ?
+    \item the DNS server?
+    \item the domain name for which the IP address is needed?
+    \item the IP address of the domain?
   \end{enumerate}
 
 \subsection{Ping-pong}
 \subsubsection{Are you there?}
 According to the file \color{blue}\href{http://teaching.auzias.net/db/ping.pcap}{ping.pcap} \color{black}:
   \begin{enumerate}
-    \item what is the node 127.0.0.1 doing ?
-    \item Is the node 127.0.0.2 on the network ?
-    \item the IP address of the domain ?
+    \item what is the node 127.0.0.1 doing?
+    \item Is the node 127.0.0.2 on the network?
   \end{enumerate}
 \subsubsection{Who has this IP?}
-According to the file \color{blue}\href{http://teaching.auzias.net/db/arp.pcap}{arp.pcap} \color{black} and to ARP (\color{blue}\href{http://tools.ietf.org/html/rfc826}{RFC826 (November 1982)}) \color{black}. What is trying to do the source ? What ARP is used for ?
+According to the file \color{blue}\href{http://teaching.auzias.net/db/arp.pcap}{arp.pcap} \color{black} and to ARP (\color{blue}\href{http://tools.ietf.org/html/rfc826}{RFC826 (November 1982)})\color{black}. What is the source trying to do? What is ARP used for?
 
 \end{document}

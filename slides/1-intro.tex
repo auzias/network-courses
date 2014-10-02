@@ -4,16 +4,16 @@
     \frametitle{Definitions}
       \begin{itemize}
         \item \textbf{Network:} an \textbf{interconnected} group or system\pause
-        \item \textbf{Internet:} world wide \textbf{interconnected system of network\emph{s}} \color{blue}\href{http://tools.ietf.org/html/rfc791}{RFC791 (1981)}\color{black}\pause
-        \item \textbf{IP:} Internet \textbf{Protocol} that provides the functions necessary to deliver a package of bits from a source to a destination over a network\pause
+        \item \textbf{Internet:} world wide \textbf{interconnected system of network\emph{s}} \color{blue}\href{http://tools.ietf.org/html/rfc791}{RFC791 (September 1981)}\color{black}\pause
+        \item \textbf{IP:} Internet \textbf{Protocol} provides the functions necessary to deliver a package of bits from a source to a destination over a network\pause
         \item \textbf{(world wide) Web:} \textbf{network} consisting of a collection of Internet websites using HTTP
       \end{itemize}
   \end{frame}
   \begin{frame}
     \frametitle{Definitions}
       \begin{itemize}
-        \item \textbf{HTTP:} Hypertext Transfer Protocol \textbf{Protocol}, application-level protocol for distributed, collaborative, hypermedia information systems \color{blue}\href{http://tools.ietf.org/html/draft-ietf-httpbis-http2-14}{draft HTTP2 (July 2014)} \color{black}\pause
-        \item \textbf{FTP:} File Transfer \textbf{Protocol} promotes sharing of files, encourages use of remote computers \color{blue}\href{http://tools.ietf.org/html/rfc959}{RFC959 (October 1985)} \color{black} \pause
+        \item \textbf{HTTP:} Hypertext Transfer \textbf{Protocol}, application-level protocol for distributed, collaborative, hypermedia information systems \color{blue}\href{http://tools.ietf.org/html/draft-ietf-httpbis-http2-14}{draft HTTP2 (July 2014)} \color{black}\pause
+        \item \textbf{FTP:} File Transfer \textbf{Protocol} promotes sharing of files, encourages the use of remote computers \color{blue}\href{http://tools.ietf.org/html/rfc959}{RFC959 (October 1985)} \color{black} \pause
         \item \textbf{TCP:} Transmission Control \textbf{Protocol} is intended for use as a highly reliable host-to-host \color{blue}\href{http://tools.ietf.org/html/rfc761}{RFC761 (January 1980)} \color{black} \pause
         \item \textbf{UDP:} User Datagram \textbf{Protocol} provides  a procedure  for application  programs  to send messages  to other programs  with a minimum  of protocol mechanism \color{blue}\href{http://tools.ietf.org/html/rfc768}{RFC768 (August 1980)} \color{black} \pause
         \item \textbf{RFC:} Request For Comments (Internet Draft (ID), RFC, Internet Standard)
@@ -24,16 +24,17 @@
       \begin{itemize}
         \item \textbf{Router:} network \textbf{hardware} providing routing services\pause
         \item \textbf{Routing:} \textbf{algorithm processed} to decide where to forward a packet\pause
-        \item \textbf{Forwarding:} \textbf{\emph{action}} of moving a packet from an NIC to another\pause
+        \item \textbf{Forwarding:} \textbf{\emph{action}} of moving a packet from one NIC to another\pause
         \item \textbf{NIC:} Network Interface Card
-        \item \textbf{Switch (hub):} network \textbf{hardware} that connect systems together using packet switching\pause
-        \item \textbf{Packet switching:} forward-like method regardless of the content (destination-based)
+        \item \textbf{Switch (hub):} network \textbf{hardware} connecting systems using packet switching\pause
+        \item \textbf{Packet switching:} forward-like method regardless of the content (destination-based)\pause
+        \item \textbf{NAT:} Network Address Translation, router modifying IP address into another IP address.
       \end{itemize}
   \end{frame}
   \begin{frame}
     \frametitle{Definitions}
       \begin{itemize}
-        \item \textbf{Node (network):} any entity that can send/receive packets from a network through a NIC\pause
+        \item \textbf{Node (network):} any entity that can send packets to/receive packets from a network through a NIC\pause
         \item \textbf{Client:} \textbf{computer} able to send requests to a server\pause
         \item \textbf{Request:} \textbf{application message} destined for a server (\emph{order})\pause
         \item \textbf{Server:} \textbf{computer} able to respond a client's requests\pause
@@ -45,7 +46,7 @@
 
 \subsection{Network classification}
   \begin{frame}
-    \frametitle{What kind of networks is it ?}
+    \frametitle{What kind of network is it?}
       \begin{itemize}
         \item \textbf{BAN:} Body Area Network\pause
         \item \textbf{PAN:} Personal Area Networks\pause
@@ -72,8 +73,8 @@
       \item \textbf{Star:} all messages go through the same central node, reducing network failure.\pause
       \item \textbf{Fully connected:} all nodes are connected to all other nodes.\pause
       \item \textbf{Line:} bidirectional link between two nodes. Node can only send packet going through its neighbors.\pause
-      \item \textbf{Bus:} all nodes are connected to the same media. Only one at a time can send packet, that all other receives.\pause
-      \item \textbf{Tree:} hierarchical topology, such as, i.e., binary tree.
+      \item \textbf{Bus:} all nodes are connected to the same media. Only one can send a packet at a time, which all others then receive.\pause
+      \item \textbf{Tree:} hierarchical topology, such as a binary tree.
     \end{itemize}
   \end{frame}
   \begin{frame}
@@ -134,7 +135,7 @@
       \end{figure}
   \end{frame}
     \begin{frame}
-    \frametitle{How does messages reach destination ?}
+    \frametitle{How do messages reach their destination?}
       \begin{figure}
     \includegraphics[width=9.5cm]{./imgs/routing.jpg}
   \caption{\color{blue}\href{http://acenk90.files.wordpress.com}{acenk90.files.wordpress.com}}
@@ -152,7 +153,7 @@
 
 \subsection{Models overview (OSI and TCP/IP)}
   \begin{frame}
-    \frametitle{How does it work ? From signal to application...}
+    \frametitle{How does it work? From signal to application...}
     \begin{figure}[t]
       \centering
       \includegraphics[height=6cm]{./imgs/osi_model.eps}
