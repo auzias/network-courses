@@ -18,13 +18,13 @@
         \item \textbf{Forwarding:} \textbf{\emph{action}} of moving a packet from an NIC to another\pause
         \item \textbf{NIC:} Network Interface Card
         \item \textbf{Switch (hub):} network \textbf{hardware} that connect systems together using packet switching\pause
-        \item \textbf{Packet switching:} forward-like method regardless of the content (destination-based)\pause
+        \item \textbf{Packet switching:} forward-like method regardless of the content (destination-based)
       \end{itemize}
   \end{frame}
   \begin{frame}
     \frametitle{Definitions}
       \begin{itemize}
-        \item \textbf{Computer (network):} any entity that can send/receive packets from a network through a NIC\pause
+        \item \textbf{Node (network):} any entity that can send/receive packets from a network through a NIC\pause
         \item \textbf{Client:} \textbf{computer} able to send requests to a server\pause
         \item \textbf{Request:} \textbf{application message} destined for a server (\emph{order})\pause
         \item \textbf{Server:} \textbf{computer} able to respond a client's requests\pause
@@ -33,38 +33,6 @@
         \item \textbf{Thin client:} \textbf{application} where most functions are carried out on a central server
       \end{itemize}
   \end{frame}
-
-\subsection{HTTP request/response example}
-\begin{frame}
-    \frametitle{HTTP request/response example}
-      Enter \color{blue}\href{http://getbootstrap.com}{getbootstrap.com} \color{black} in your browser\pause
-      \begin{figure}
-	  \includegraphics[width=11.5cm]{./imgs/dns-req.png}
-	\caption{DNS request/response}
-      \end{figure}
-      \pause
-      \begin{figure}
-	  \includegraphics[width=13cm]{./imgs/http-req.png}
-	\caption{HTTP request/response}
-      \end{figure}
-  \end{frame}
-    \begin{frame}
-    \frametitle{How does messages reach destination ?}
-      \begin{figure}
-    \includegraphics[width=9.5cm]{./imgs/routing.jpg}
-  \caption{\color{blue}\href{http://acenk90.files.wordpress.com}{acenk90.files.wordpress.com}}
-  \label{fig:routing}
-      \end{figure}
-  \end{frame}
-    \begin{frame}
-    \frametitle{More like this...}
-      \begin{figure}
-    \includegraphics[height=6.5cm]{./imgs/map.jpg}
-  \caption{\color{blue}\href{https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map_1024.jpg/768px-Internet_map_1024.jpg}{wikimedia.org}}
-  \label{fig:routing}
-      \end{figure}
-  \end{frame}
-
 
 \subsection{Network classification}
   \begin{frame}
@@ -89,20 +57,60 @@
   \begin{frame}
     \frametitle{Topologies}
     \begin{itemize}
-      \item \textbf{Point-to-point:} two entities directly connected to each other (tunnel) \pause
-      \item \textbf{Ring:} data go around the ring, unidirectional way network \pause
-      \item \textbf{Mesh:} All nodes cooperate in the distribution of data in the network\footnote{test} \pause
-      \item \textbf{Star:} Wide Area Networks cover a broad area (Internet)\pause
-      \item \textbf{Fully connected:} Wide Area Networks cover a broad area (Internet)\pause
-      \item \textbf{Line:} Wide Area Networks cover a broad area (Internet)\pause
-      \item \textbf{Bus:} Wide Area Networks cover a broad area (Internet)\pause
-      \item \textbf{Tree:} Wide Area Networks cover a broad area (Internet)
+      \item \textbf{Point-to-point:} two entities directly connected to each other (tunnel).\pause
+      \item \textbf{Ring:} data go around the ring, unidirectional way network.\pause
+      \item \textbf{Mesh:} all nodes cooperate in the distribution of data in the network\footnote{\color{blue}\href{http://www.newscientist.com/article/dn26285-hong-kong-protesters-use-a-mesh-network-to-organise.html}{Hong Kong protesters use a mesh network to organize}}.\pause
+      \item \textbf{Star:} all messages go through the same central node, reducing network failure.\pause
+      \item \textbf{Fully connected:} all nodes are connected to all other nodes.\pause
+      \item \textbf{Line:} bidirectional link between two nodes. Node can only send packet going through its neighbors.\pause
+      \item \textbf{Bus:} all nodes are connected to the same media. Only one at a time can send packet, that all other receives.\pause
+      \item \textbf{Tree:} hierarchical topology, such as, i.e., binary tree.
     \end{itemize}
   \end{frame}
+  \begin{frame}
+    \frametitle{Bonus}
 
+      \end{frame}
+
+
+\subsection{HTTP request/response example}
+\begin{frame}
+    \frametitle{HTTP request/response example}
+      Enter \color{blue}\href{http://getbootstrap.com}{getbootstrap.com} \color{black} in your browser\pause
+      \begin{figure}
+    \includegraphics[width=11.5cm]{./imgs/dns-req.png}
+  \caption{DNS request/response}
+      \end{figure}
+      \pause
+      \begin{figure}
+    \includegraphics[trim = 0 0 100mm 0, clip, width=11.5cm]{./imgs/http-req.png}
+  \caption{HTTP request/response}
+      \end{figure}
+  \end{frame}
+    \begin{frame}
+    \frametitle{How does messages reach destination ?}
+      \begin{figure}
+    \includegraphics[width=9.5cm]{./imgs/routing.jpg}
+  \caption{\color{blue}\href{http://acenk90.files.wordpress.com}{acenk90.files.wordpress.com}}
+  \label{fig:routing}
+      \end{figure}
+  \end{frame}
+    \begin{frame}
+    \frametitle{More like this...}
+      \begin{figure}
+    \includegraphics[height=6.5cm]{./imgs/map.jpg}
+  \caption{\color{blue}\href{https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map_1024.jpg/768px-Internet_map_1024.jpg}{wikimedia.org}}
+  \label{fig:routing}
+      \end{figure}
+  \end{frame}
 
 \subsection{Models overview (OSI and TCP/IP)}
   \begin{frame}
-    \frametitle{How does it work ?}
-    %http://homepages.uel.ac.uk/u0313643/photo.htm
+    \frametitle{How does it work ? From signal to application...}
+    \begin{figure}[t]
+      \centering
+      \includegraphics[height=6cm]{./imgs/layers.png}
+      \caption{\color{blue}\href{http://mycomsats.com/blogs/wp-content/uploads/2012/05/image.png}{mycomsats.com}}
+      \label{fig:ntwks}
+    \end{figure}
   \end{frame}
