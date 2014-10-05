@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    id="svg2"
+    sodipodi:docname="L2 switch.svg"
+    viewBox="0 0 59.269 44.73"
+    version="1.2"
+    inkscape:version="0.48.1 "
+  >
+  <sodipodi:namedview
+      id="namedview2283"
+      fit-margin-left="0"
+      inkscape:zoom="5.6568542"
+      borderopacity="1"
+      inkscape:current-layer="svg2"
+      inkscape:cx="42.66496"
+      inkscape:cy="24.880395"
+      inkscape:window-maximized="0"
+      showgrid="false"
+      fit-margin-right="0"
+      bordercolor="#666666"
+      inkscape:window-x="0"
+      guidetolerance="10"
+      objecttolerance="10"
+      inkscape:window-y="0"
+      fit-margin-bottom="0"
+      inkscape:window-width="1034"
+      inkscape:pageopacity="0"
+      inkscape:pageshadow="2"
+      pagecolor="#ffffff"
+      gridtolerance="10"
+      inkscape:window-height="683"
+      fit-margin-top="0"
+  />
+  <defs
+      id="defs4"
+    >
+    <filter
+        id="filter3967-5-1"
+        color-interpolation-filters="sRGB"
+      >
+      <feGaussianBlur
+          id="feGaussianBlur3969-22-9"
+          stdDeviation="2.7953664"
+      />
+    </filter
+    >
+    <radialGradient
+        id="radialGradient9580"
+        gradientUnits="userSpaceOnUse"
+        cy="676.79"
+        cx="508.65"
+        gradientTransform="matrix(1 0 0 .57040 -2 274.75)"
+        r="86.402"
+      >
+      <stop
+          id="stop10771-43-4"
+          style="stop-color:#164a0e"
+          offset="0"
+      />
+      <stop
+          id="stop10773-7-8"
+          style="stop-color:#164a0e;stop-opacity:0"
+          offset="1"
+      />
+    </radialGradient
+    >
+  </defs
+  >
+  <g
+      id="layer2"
+      transform="translate(-287.71 -732.36)"
+    >
+    <g
+        id="g9552"
+        transform="matrix(.10273 0 0 .10273 282.24 709.45)"
+      >
+      <path
+          id="path9554"
+          style="filter:url(#filter3967-5-1);fill:url(#radialGradient9580)"
+          inkscape:connector-curvature="0"
+          d="m420.75 672.71v-18.688l82.055-42.01 89.748 35.306v18.414l-93.012 43.848-78.792-36.871z"
+          transform="matrix(3.115 0 0 3.115 -1236.5 -1572.8)"
+      />
+      <g
+          id="g9556"
+          style="color:#000000;fill-opacity:.66129;stroke:#000000;stroke-width:2;fill:#696ba7"
+        >
+        <path
+            id="path9558"
+            style="stroke:#000000;fill-rule:evenodd;fill:#feffff"
+            inkscape:connector-curvature="0"
+            d="m341.26 224.05 241.06 113.64v141.21l-241.06-113.64z"
+        />
+        <path
+            id="path9560"
+            style="stroke:#000000;fill-opacity:1;fill:#464f7a"
+            inkscape:connector-curvature="0"
+            d="m95.37 339.97v141.21l245.89-115.92v-141.21z"
+        />
+        <path
+            id="path9562"
+            style="fill-rule:evenodd;stroke:#000000;fill:#d2d2e4;fill-opacity:1"
+            inkscape:connector-curvature="0"
+            d="m95.37 481.17 241.06 113.65 245.89-115.92-241.06-113.65z"
+            transform="translate(0 .000043596)"
+        />
+        <path
+            id="path9564"
+            style="stroke:#000000;fill-opacity:1;fill:#5d6599"
+            inkscape:connector-curvature="0"
+            d="m95.37 339.97 241.06 113.64 245.89-115.92-241.06-113.64z"
+        />
+        <path
+            id="path9566"
+            style="stroke:#000000;fill-opacity:1;fill:#7b7bac"
+            inkscape:connector-curvature="0"
+            d="m336.43 453.61v141.21l245.89-115.92v-141.21z"
+        />
+        <path
+            id="path9568"
+            style="stroke:#000000;fill-opacity:1;fill:#464f7a"
+            inkscape:connector-curvature="0"
+            d="m95.37 339.97 241.06 113.64v141.21l-241.06-113.65z"
+        />
+      </g
+      >
+      <path
+          id="path9570"
+          style="fill:#f0f0f0"
+          inkscape:connector-curvature="0"
+          d="m302.68 264.66 38.514 5.6218 38.514 5.6218-16.367 5.3307 40.055 21.107-26.52 10.44-44.055-21.607-16.367 5.3308-6.8691-15.929z"
+      />
+      <path
+          id="path9572"
+          style="fill:#f0f0f0"
+          inkscape:connector-curvature="0"
+          d="m473.91 375.32-6.8691-15.929-6.8691-15.929-16.367 5.3308-46.555-22.107-26.02 9.9405 42.055 22.107-16.367 5.3307 38.514 5.6218z"
+      />
+      <path
+          id="path9574"
+          style="fill:#f0f0f0"
+          inkscape:connector-curvature="0"
+          d="m218.1 303.03 38.514 5.6218 38.514 5.6218-16.367 5.3307 41.555 21.107-25.52 10.94-46.555-22.107-16.367 5.3308-6.8691-15.929z"
+      />
+      <path
+          id="path9576"
+          style="fill:#f0f0f0"
+          inkscape:connector-curvature="0"
+          d="m391.74 411.85-6.8691-15.929-6.8691-15.929-16.367 5.3308-46.555-22.107-26.52 9.9405 42.555 22.107-16.367 5.3307 38.514 5.6218z"
+      />
+    </g
+    >
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Purple switch</dc:title
+        >
+        <dc:date
+          >2012-07-23T10:53:46</dc:date
+        >
+        <dc:description
+          >Alternate color and arrow placement.</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/171276/purple-switch-by-owoc-171276</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >owoc</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >Ethernet</rdf:li
+            >
+            <rdf:li
+              >IP</rdf:li
+            >
+            <rdf:li
+              >L2</rdf:li
+            >
+            <rdf:li
+              >LAN</rdf:li
+            >
+            <rdf:li
+              >TCP/IP</rdf:li
+            >
+            <rdf:li
+              >WAN</rdf:li
+            >
+            <rdf:li
+              >layer 2</rdf:li
+            >
+            <rdf:li
+              >network</rdf:li
+            >
+            <rdf:li
+              >schema</rdf:li
+            >
+            <rdf:li
+              >switch</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>
