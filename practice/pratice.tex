@@ -19,10 +19,17 @@
 \pagebreak
 
 
-\section{Introduction}
-\subsection{http example}
+\section{HTTP example}
+\subsection{Who are you? Where are you?}
+What is your own IP address? What is your own MAC address? What do theses commands display?
+\begin{lstlisting}
+#ifconfig
+$curl ifconfig.me
+$netstat -at
+\end{lstlisting}
+
 \subsubsection{ARP}
-Before we can access the Internet we need to know who/what is the gateway. What is the IP address of yours? What is the MAC address? What do theses commands do?
+Before we can access the Internet we need to know who/what is the gateway. What is the IP address of yours? What is the MAC address? What do theses commands display?
 \begin{lstlisting}
 #route -n
 #arp -a
