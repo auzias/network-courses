@@ -6,7 +6,6 @@
 \usepackage[margin=3cm, tmargin=2cm]{geometry}
 \usepackage{color}
 \usepackage{hyperref}
-\usepackage{listings}
 
 \begin{document}
  \bibliographystyle{plain}%Choose a bibliograhpic style
@@ -22,18 +21,24 @@
 \section{HTTP example}
 \subsection{Who are you? Where are you?}
 What is your own IP address? What is your own MAC address? What do theses commands display?
-\begin{lstlisting}
+\begin{verbatim}
 #ifconfig
 $curl ifconfig.me
 $netstat -at
-\end{lstlisting}
+\end{verbatim}
 
 \subsubsection{ARP}
 Before we can access the Internet we need to know who/what is the gateway. What is the IP address of yours? What is the MAC address? What do theses commands display?
-\begin{lstlisting}
+\begin{verbatim}
 #route -n
 #arp -a
-\end{lstlisting}
+\end{verbatim}
 
+\section{Chat}
+\verb"netcat" is a "network swiss army knife". By checking its man page how can you use it as a chat server/client (two nodes only).
+\subsubsection{TCP}
+Use the mode TCP of \verb"netcat" and try it. Can \verb"netstat" could, somehow, be handful for anything while waiting for connection?
+\subsubsection{UDP}
+Use the mode UDP of \verb"netcat" and try it. Explain a situation within the server could not receive every packet.
 
 \end{document}
