@@ -73,10 +73,18 @@ Use the mode UDP of \verb"netcat" and try it. Explain a situation within the ser
 \newline
 More example of netcat:\color{blue}\href{http://www.brianhaddock.com/2013/8-great-netcat-nc-unix-commands}{brianhaddock.com}\color{black}
 
-\subsection{Create your own}
+\subsection{Create your own client}
+In the two next exercise you can use \verb"netcat" to verify, whether or not, your client are working.
 \subsubsection{TCP}
 Create a TCP client that send packet to a specific port on \verb"localhost". (The class \verb"Socket" should be useful...)
 \subsubsection{UDP}
 Try to produce the situation explained in \ref{chat:udp} by implementing it using Java language and flood a specific port on \verb"localhost". (The classes \verb"InetAddress" and \verb"DatagramPacket" should be useful...)
+
+\subsection{Create your own server}
+In the two next exercise you can use your previous client to verify, whether or not, your server are working.
+\subsubsection{TCP}
+Implement in Java a TCP server that connects at the first attempt of connection and displays it on the screen. Next step is to \emph{echo} it (send it back).
+\subsubsection{UDP}
+Implement in Java a UDP server that receives and displays it on the screen. Next step is to \emph{echo} it (send it back).
 
 \end{document}
