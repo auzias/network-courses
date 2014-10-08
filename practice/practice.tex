@@ -64,12 +64,19 @@ Some methods allow web-master to secure some part of the website. Then the websi
 Use \verb"wireshark" and verify if you had captured the user:password encrypted or not. \color{blue}\href{http://tools.ietf.org/html/rfc2617}{RFC 2617}\color{black} could be handful.
 
 \section{Chat}
+\subsection{netcat}
 \verb"netcat (or ncat)" is a "network swiss army knife". By checking its man page how can you use it as a chat server/client (two nodes only).
 \subsubsection{TCP}
-Use the mode TCP of \verb"netcat" and try it. Can \verb"netstat" could, somehow, be handful for anything while waiting for connection? Can \verb"telnet" be used to chat?
-\subsubsection{UDP}
+Use the mode TCP of \verb"netcat" and try it. Can \verb"netstat" could, somehow, be helpful for anything while waiting for connection? Can \verb"telnet" be used to chat?
+\subsubsection{UDP}\label{chat:udp}
 Use the mode UDP of \verb"netcat" and try it. Explain a situation within the server could not receive every packet.
-Try to produce this situation by implementing it using Java langage. (\verb"InetAddress" and \verb"DatagramPacket" should be useful...)
+\newline
+More example of netcat:\color{blue}\href{http://www.brianhaddock.com/2013/8-great-netcat-nc-unix-commands}{brianhaddock.com}\color{black}
 
-More example of \color{blue}\href{http://www.brianhaddock.com/2013/8-great-netcat-nc-unix-commands}{netcat}\color{black}
+\subsection{Create your own}
+\subsubsection{TCP}
+Create a TCP client that send packet to a specific port on \verb"localhost". (The class \verb"Socket" should be useful...)
+\subsubsection{UDP}
+Try to produce the situation explained in \ref{chat:udp} by implementing it using Java language and flood a specific port on \verb"localhost". (The classes \verb"InetAddress" and \verb"DatagramPacket" should be useful...)
+
 \end{document}
