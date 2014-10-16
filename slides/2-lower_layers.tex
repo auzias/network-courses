@@ -134,12 +134,26 @@
   \begin{frame}
     \frametitle{Error correcting}
       \begin{itemize}
-        \item not done yet...
+        \item Repetition (again) \pause
+        \item Hamming \pause
+        \item MDPC (Multidimensional parity-check code): state change for 1s over 3 levels, stay in the same state for 0s \pause
       \end{itemize}
   \end{frame}
 
   \begin{frame}
-    \frametitle{}
+    \frametitle{Correction: MDPC}
+    Raw data to send: 0x01 02 03 04
+      \begin{figure}[h]
+      \centering
+      \begin{tabular}{cc|c}
+        0x01 & 0x02 & 0x03 \\
+        0x03 & 0x04 & 0x07 \\ \hline
+        0x04 & 0x06 &
+      \end{tabular}
+      \caption{Data received with MDPC}
+      \label{fig:ami}
+    \end{figure}
+  Data sent (with MDPC): 0x01 02 03 03 04 07 04 06
   \end{frame}
 \subsection{Data Link}
   \begin{frame}
