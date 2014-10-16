@@ -6,6 +6,7 @@
 \usepackage[margin=3cm, tmargin=2cm]{geometry}
 \usepackage{color}
 \usepackage{hyperref}
+\usepackage{array}
 
 \begin{document}
  \bibliographystyle{plain}%Choose a bibliograhpic style
@@ -152,7 +153,16 @@ Are theses received data correct? NB: detection values are in square brackets.
 
 
 \subsubsection{Correct it}
-\textbf{to be done...}
-
+By using MDPC (Multidimensional parity-check code) the data received are: \verb$0x01 09 0e 06 03 09 0b 0c$. Are the data correct? What would be the correction? \\
+  \begin{figure}[h]
+    \centering
+    \begin{tabular}{cc|c}
+      0x01 & 0x09 & 0x0e \\
+      0x06 & 0x03 & 0x09 \\ \hline
+      0x0b & 0x0c &
+    \end{tabular}
+    \caption{Data received with MDPC}
+    \label{fig:ami}
+  \end{figure}
 
 \end{document}
