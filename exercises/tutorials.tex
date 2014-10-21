@@ -165,4 +165,30 @@ By using MDPC (Multidimensional parity-check code) the data received are: \verb$
     \label{fig:ami}
   \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%      Layer 2       %%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data layer}
+\subsection{General}
+\subsubsection{Aims?}
+What are the main objectives of the data layer?
+\subsubsection{Composition}
+What are the sublayer of the data layer?
+
+\subsection{Ethernet packet decoding}
+What is the objective of the packet \ref{fig:arp_req_ex}?
+  \begin{figure}[h]
+  \centering
+  \resizebox{17cm}{!} {
+    \begin{tabular}{lcccccccccccccccc}
+      \textbf{0000} & ff & ff & ff & ff & ff & ff & fa & ba & 00 & ab & ab & af & 08 & 06 & 00 & 01 \\
+      \textbf{0010} & 08 & 00 & 06 & 04 & 00 & 01 & fa & ba & 00 & ab & ab & af & ac & 11 & 22 & 37 \\
+      \textbf{0020} & 00 & 00 & 00 & 00 & 00 & 00 & ac & 11 & 00 & f9 & 00 & 00 & 00 & 00 & 00 & 00 \\
+      \textbf{0030} & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 \\
+    \end{tabular}
+  }
+  \caption{Layer 2 packet}
+  \label{fig:arp_req_ex}
+  \end{figure}
+
 \end{document}
