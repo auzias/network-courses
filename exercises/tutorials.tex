@@ -176,19 +176,23 @@ What are the main objectives of the data layer?
 What are the sublayer of the data layer?
 
 \subsection{Ethernet packet decoding}
-What is the objective of the packet \ref{fig:arp_req_ex}?
+According to the packet \ref{fig:arp_req_ex}, which machine tried to ping which machine? Give MAC and IP address of both machines.
   \begin{figure}[h]
   \centering
   \resizebox{17cm}{!} {
     \begin{tabular}{lcccccccccccccccc}
-      \textbf{0000} & ff & ff & ff & ff & ff & ff & fa & ba & 00 & ab & ab & af & 08 & 06 & 00 & 01 \\
-      \textbf{0010} & 08 & 00 & 06 & 04 & 00 & 01 & fa & ba & 00 & ab & ab & af & ac & 11 & 22 & 37 \\
-      \textbf{0020} & 00 & 00 & 00 & 00 & 00 & 00 & ac & 11 & 00 & f9 & 00 & 00 & 00 & 00 & 00 & 00 \\
-      \textbf{0030} & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 & 00 \\
+      \textbf{0000} & ff & ff & ff & ff & ff & ff & 00 & 1b & 11 & 09 & aa & 88 & 08 & 06 & 00 & 01 \\
+      \textbf{0010} & 08 & 00 & 06 & 04 & 00 & 01 & 00 & 1b & 11 & 09 & aa & 88 & c0 & a8 & 00 & 3b \\
+      \textbf{0020} & 00 & 00 & 00 & 00 & 00 & 00 & c0 & a8 & 00 & 3c \\
     \end{tabular}
   }
   \caption{Layer 2 packet}
   \label{fig:arp_req_ex}
   \end{figure}
+
+
+
+
+
 
 \end{document}
