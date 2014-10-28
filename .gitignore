@@ -1,5 +1,9 @@
 *~
 *.class
+*.classpath
+*.project
+*eclipse.jdt.core.prefs
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
