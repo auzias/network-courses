@@ -318,32 +318,155 @@
     \frametitle{IP addressing fundamentals}
     \begin{block}{IP address}
       \begin{figure}
-	\centering
-	  \begin{tabular}{|c|c|}
-	    \multicolumn{2}{c}{32 bits (4 * 4 bytes)} \\ \hline
-	    \color{red}Networks bit & \color{blue}Host bit \\ \hline
-	  \end{tabular}
-	\caption{IP address}
-	\label{fig:inside_ip_address}
+        \centering
+        \begin{tabular}{|c|c|}
+          \multicolumn{2}{c}{32 bits (4x4 bytes)} \\ \hline
+           & \\ \hline
+          \color{brown}Networks part & \color{blue}Host part \\ \hline
+        \end{tabular}
+        \caption{IP address parts}
+        \label{fig:inside_ip_address}
       \end{figure}
     \end{block}
-    \pause
-    \begin{block}{Mask}
-      Network and host bit are separated accroding to the \textbf{mask}.%http://www.cs.fsu.edu/courses/netdesign/ip_addr_tutor.pdf
-    \end{block}      
-      
-      
-      
-      
-      
-      
-      
-      
   \end{frame}
 
+  \begin{frame}
+    \frametitle{IP addressing fundamentals}
+    \begin{block}{Masks}
+      \begin{itemize}
+        \item Separates network and host bits,\pause
+        \item MSB \textbf{always} are ones and then zeros! 255.254.255.0 is not possible,\pause
+        \item Indicates how many bits are used for the network part:
+        \begin{itemize}
+          \item A 8-bit mask leaves 24 bits for the hosts,
+          \item A 16-bit mask leaves 16 bits for the hosts,
+          \item A 24-bit mask leaves 8 bits for the hosts,
+          \item A N-bit mask leaves 32-N bits for the hosts.
+        \end{itemize}\pause
+        \item Two different mask (differences seen further):
+        \begin{itemize}
+          \item Network mask,
+          \item Subnet mask.
+        \end{itemize}
+      \end{itemize}
+    \end{block}
+  \end{frame}
+  \begin{frame}
+    \frametitle{IP addressing fundamentals}
+    \begin{block}{IP address}
+      \begin{figure}
+        \centering
+        \begin{tabular}{|c|c|}
+          \multicolumn{2}{c}{32 bits (4x4 bytes)} \\ \hline
+          \uncover<2->{\color{brown}ones mask} & \uncover<2->{\color{blue}zeros mask} \\ \hline
+          \color{brown}Networks part & \color{blue}Host part \\ \hline
+        \end{tabular}
+        \caption{IP address parts and mask}
+        \label{fig:inside_ip_address_mask}
+      \end{figure}
+    \end{block}
+  \end{frame}
 
+  \begin{frame}
+    \frametitle{IP addressing fundamentals}
+    \begin{block}{Is that a host?}
+      \begin{itemize}
+        \item Network address,\pause
+        \item Node,\pause
+        \item Broadcast address.\pause
+      \end{itemize}
+    \end{block}
+    \begin{block}{Within the same network}
+      \begin{itemize}
+        \item All addresses have the same network bits,\pause
+        \item All nodes have different host bits,\pause
+        \item Network address has zeros for host bits,\pause
+        \item Broadcast address has ones for host bits.
+      \end{itemize}
+    \end{block}
+  \end{frame}
 
+  \begin{frame}
+    \frametitle{Example: network 1}
+    \begin{figure}
+        \centering
+      \begin{tabular}{|r|cccc|}
+        \hline
+        \multirow{2}{*}{Mask /24} & {\color{brown}255} & {\color{brown}255} & {\color{brown}255} & {\color{brown}0} \\
+        & {\color{brown}11111111} & {\color{brown}11111111} & {\color{brown}11111111} & {\color{brown}00000000} \\ \hline
+        \multirow{2}{*}{Network address} & \color{brown}192 & \color{brown}168 & \color{brown}1 & \color{blue}0 \\
+        & \color{brown}11000000 & \color{brown}10101000 & \color{brown}00000001 & \color{blue}00000000 \\ \hline
+        \multirow{2}{*}{First nodes address} & \color{brown}192 & \color{brown}168 & \color{brown}1 & \color{blue}1 \\
+        & \color{brown}11000000 & \color{brown}10101000 & \color{brown}00000001 & \color{blue}00000001 \\ \hline
+        \multirow{2}{*}{Last nodes address} & \color{brown}192 & \color{brown}168 & \color{brown}1 & \color{blue}254 \\
+        & \color{brown}11000000 & \color{brown}10101000 & \color{brown}00000001 & \color{blue}11111110 \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{brown}192 & \color{brown}168 & \color{brown}1 & \color{blue}255 \\
+        & \color{brown}11000000 & \color{brown}10101000 & \color{brown}00000001 & \color{blue}11111111 \\ \hline
+      \end{tabular}
+      \caption{IP address example 1}
+    \end{figure}
+  \end{frame}
 
+  \begin{frame}
+    \frametitle{Example: network 2}
+    \begin{figure}
+        \centering
+      \begin{tabular}{|r|cccc|}
+        \hline
+        \multirow{2}{*}{Mask /16} & {\color{brown}255} & {\color{brown}255} & {\color{brown}0} & {\color{brown}0} \\
+        & {\color{brown}11111111} & {\color{brown}11111111} & {\color{brown}00000000} & {\color{brown}00000000} \\ \hline
+        \multirow{2}{*}{Network address} & \color{brown}172 & \color{brown}17 & \color{blue}0 & \color{blue}0 \\
+        & \color{brown}10101100 & \color{brown}00010001 & \color{blue}00000000 & \color{blue}00000000 \\ \hline
+        \multirow{2}{*}{First nodes address} & \color{brown}172 & \color{brown}17 & \color{blue}0 & \color{blue}1 \\
+        & \color{brown}10101100 & \color{brown}00010001 & \color{blue}00000000 & \color{blue}00000001 \\ \hline
+        \multirow{2}{*}{Last nodes address} & \color{brown}172 & \color{brown}17 & \color{blue}255 & \color{blue}254 \\
+        & \color{brown}10101100 & \color{brown}00010001 & \color{blue}11111111 & \color{blue}11111110 \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{brown}172 & \color{brown}17 & \color{blue}255 & \color{blue}255 \\
+        & \color{brown}10101100 & \color{brown}00010001 & \color{blue}11111111 & \color{blue}11111111 \\ \hline
+      \end{tabular}
+      \caption{IP address example 2}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Formula}
+    \begin{block}{How many \sout{hosts} nodes with a N-bit mask?}
+      $2^{32-N}-2$\pause, the $-2$ moves out network and broadcast addresses which are not nodes.\pause
+      \begin{itemize}
+        \item 24-bit mask: $2^{32-24}-2 = 2^{8}-2 = 254$ nodes \pause
+        \item 16-bit mask: $2^{32-16}-2 = 2^{16}-2 = 65.534$ nodes \pause
+        \item 8-bit mask: $2^{32-8}-2 = 2^{24}-2 = 16.777.214$ nodes
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Public and private addresses}
+    \begin{block}{Public}
+      \begin{itemize}
+        \item Most of IP addresses \pause
+        \item Registered ISP and large organizations inherit blocks of public addresses from IANA\footnote{Internet Assigned Numbers Authority} \pause
+        \item Usage of not registered public addresses is forbidden.
+      \end{itemize}
+    \end{block}
+    \begin{block}{Private}
+      \begin{itemize}
+        \item Privates addresses are A, B and C classes (see after)\pause
+        \item No registration needed \pause
+        \item Not routed across the Internet \pause
+        \item Proxy, NAT and private addresses solved IPv4 shortage.
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Classful IP Addressing}
+    \begin{itemize}
+      \item Class A: 10.0.0.0 - 10.255.255.255
+      \item Class B: 172.16.0.0 - 172.31.255.255
+      \item Class C: 192.168.0.0 - 192.168.255.255
+    \end{itemize}
+  \end{frame}
 
 
 

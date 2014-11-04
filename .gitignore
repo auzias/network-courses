@@ -3,6 +3,7 @@
 *.classpath
 *.project
 *eclipse.jdt.core.prefs
+a.out
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
