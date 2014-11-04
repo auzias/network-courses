@@ -310,7 +310,7 @@
         \item Classfull IP addressing,\pause
         \item Subnet masks,\pause
         \item Variable length subnet masks (VLSM),\pause
-        \item Classless inter-domain routing (CIDR)
+        \item Classless inter-domain routing (CIDR).
       \end{itemize}
   \end{frame}
 
@@ -372,7 +372,7 @@
     \begin{block}{Is that a host?}
       \begin{itemize}
         \item Network address,\pause
-        \item Node,\pause
+        \item Nodes,\pause
         \item Broadcast address.\pause
       \end{itemize}
     \end{block}
@@ -459,24 +459,48 @@
     \end{block}
   \end{frame}
 
+  
   \begin{frame}
     \frametitle{Classful IP Addressing}
-    \begin{itemize}
-      \item Class A: 10.0.0.0 - 10.255.255.255
-      \item Class B: 172.16.0.0 - 172.31.255.255
-      \item Class C: 192.168.0.0 - 192.168.255.255
-    \end{itemize}
+    \begin{figure}
+      \centering
+      \begin{tabular}{|r||c|c|c|}
+        \hline
+        Class & A & B & C \\ \hline \hline
+        First octet & 1 - 126 & 128 - 191 & 192 - 223 \\ \hline
+        First octet pattern 0b& 0* & 10* & 110* \\ \hline
+        \multirow{2}{*}{\color{brown}Network mask} & 255.0.0.0 & 255.255.0.0 & 255.255.255.0\\
+         & /8 & /16 & /24 \\ \hline
+        \multirow{2}{*}{IP addresses range} & 1.0.0.0 & 128.0.0.0 & 192.0.0.0\\
+        & 126.0.0.0 & 191.255.0.0 & 223.255.255.0 \\ \hline
+        Number of nodes & 16777214 & 65534 & 254 \\ \hline
+      \end{tabular}
+      \caption{Three main classes}
+    \end{figure}
+    Where did 127.0.0.0/8 go ?!
   \end{frame}
 
-
-
-
-
-
-
-
-
-\subsection{Transport}
   \begin{frame}
-    \frametitle{Course details}
+    \frametitle{Classful IP Addressing}
+    \begin{block}{Class D}
+      \begin{itemize}
+	\item First octet: 224 - 239 \pause
+	\item First octet pattern: 1110* \pause
+	\item Theses IP addresses are multicast addresses.\pause
+      \end{itemize}
+    \end{block}
+    \begin{block}{Class E}
+      \begin{itemize}
+	\item Everything left \pause
+	\item Experimental class.
+      \end{itemize}
+    \end{block}
+  \end{frame}
+  \begin{frame}
+    \begin{block}{Reserved addresses}
+      \begin{itemize}
+	\item 0.0.0.0 used in routing (seen further) \pause
+	\item 127.0.0.0/8: loopback addresses (127.0.0.1 - 127.255.255.254).
+      \end{itemize}
+    \end{block}
   \end{frame}
