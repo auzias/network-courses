@@ -168,31 +168,6 @@ By using MDPC (Multidimensional parity-check code) the data received are: \verb$
 \subsubsection{Half or full?}
 What is the difference between half and full duplex medium?
 
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%      Layer 2       %%
-%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Data layer}
-\subsection{General}
-\subsubsection{Aims?}
-What are the main objectives of the data layer?
-\subsubsection{Composition}
-What are the sublayer of the data layer?
-
-\subsection{Ethernet packet decoding}
-According to the packet \ref{fig:arp_req_ex}, which machine tried to ping which machine? Give MAC and IP address of both machines.
-  \begin{figure}[h]
-  \centering
-  \resizebox{17cm}{!} {
-    \begin{tabular}{lcccccccccccccccc}
-      \textbf{0000} & ff & ff & ff & ff & ff & ff & 00 & 1b & 11 & 09 & aa & 88 & 08 & 06 & 00 & 01 \\
-      \textbf{0010} & 08 & 00 & 06 & 04 & 00 & 01 & 00 & 1b & 11 & 09 & aa & 88 & c0 & a8 & 00 & 3b \\
-      \textbf{0020} & 00 & 00 & 00 & 00 & 00 & 00 & c0 & a8 & 00 & 3c \\
-    \end{tabular}
-  }
-  \caption{Layer 2 packet}
-  \label{fig:arp_req_ex}
-  \end{figure}
-
 \pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%      Layer 2       %%
@@ -232,15 +207,15 @@ What does this acronym stand for? What and how is it used for? Is there any diff
 \begin{enumerate}
   \item What are the main objectives of the network layer?
   \item What are the two main objectives of host addressing?
-  \item Does this layer use reliable communication? What is the difference between end-to-end packet transmission between layer-2 and layer-3?
-  \item What does the routing is used for? What is load balancing?
+  \item Does this layer use reliable communication? What is the difference between end-to-end packet transmission layer-2 and layer-3?
+  \item What is the routing used for? What is "load balancing"?
 \end{enumerate}
 \subsubsection{Adressing}
 \begin{enumerate}
   \item How many bits does an IP address have?
   \item What are the two part of an IP address?
   \item How many bits is each part? What does determine it?
-  \item How does a mask is constituted?
+  \item How is a mask constituted?
   \item How many addresses and nodes does theses mask allow: 31, 30, 24, 16, 8, 4?
   \item What are the specification of network and broadcast addresses?
   \item What are the first and last \textbf{nodes} IP addresses of theses networks:
