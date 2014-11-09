@@ -14,9 +14,8 @@
       \begin{itemize}
         \item IP addressing fundamentals,\pause
         \item Classfull IP addressing,\pause
-        \item Subnet masks,\pause
-        \item Variable length subnet masks (VLSM),\pause
-        \item Classless inter-domain routing (CIDR).
+        \item Subnet and VLSM (Variable length subnet masks),\pause
+        \item CIDR (Classless inter-domain routing).
       \end{itemize}
   \end{frame}
 
@@ -28,7 +27,7 @@
         \begin{tabular}{|c|c|}
           \multicolumn{2}{c}{32 bits (4x4 bytes)} \\ \hline
            \multicolumn{2}{|c|}{\color{brown}mask} \\ \hline
-          \color{brown}Networks part & \color{blue}Host part \\ \hline
+          \color{ForestGreen}Networks part & \color{blue}Host part \\ \hline
         \end{tabular}
         \caption{IP address parts}
         \label{fig:inside_ip_address}
@@ -40,19 +39,19 @@
     \frametitle{IP addressing fundamentals}
     \begin{block}{Masks}
       \begin{itemize}
-        \item Separates network and host bits,\pause
+        \item Separates {\color{ForestGreen}network} and {\color{blue}host} bits,\pause
         \item MSB \textbf{always} are ones and then zeros! 255.254.255.0 is not possible,\pause
-        \item Indicates how many bits are used for the network part:
+        \item Indicates how many bits are used for the {\color{ForestGreen}network} part:
         \begin{itemize}
-          \item A 8-bit mask leaves 24 bits for the hosts,
-          \item A 16-bit mask leaves 16 bits for the hosts,
-          \item A 24-bit mask leaves 8 bits for the hosts,
-          \item A N-bit mask leaves 32-N bits for the hosts.
+          \item A 8-bit {\color{brown}mask} leaves 24 bits for the {\color{blue}hosts},
+          \item A 16-bit {\color{brown}mask} leaves 16 bits for the {\color{blue}hosts},
+          \item A 24-bit {\color{brown}mask} leaves 8 bits for the {\color{blue}hosts},
+          \item A N-bit {\color{brown}mask} leaves 32-N bits for the {\color{blue}hosts}.
         \end{itemize}\pause
-        \item Two different mask (differences seen further):
+        \item Two different {\color{brown}masks} (differences seen further):
         \begin{itemize}
-          \item Network mask,
-          \item Subnet mask.
+          \item Network {\color{brown}mask},
+          \item Subnet {\color{brown}mask}.
         \end{itemize}
       \end{itemize}
     \end{block}
@@ -64,10 +63,10 @@
         \centering
         \begin{tabular}{|c|c|}
           \multicolumn{2}{c}{32 bits (4x4 bytes)} \\ \hline
-          \uncover<2->{\color{brown}ones mask} & \uncover<2->{\color{blue}zeros mask} \\ \hline
-          \color{brown}Networks part & \color{blue}Host part \\ \hline
+          \uncover<2->{\color{brown}ones mask} & \uncover<2->{\color{fuchsia}zeros mask} \\ \hline
+          \color{ForestGreen}Networks part & \color{blue}Host part \\ \hline
         \end{tabular}
-        \caption{IP address parts and mask}
+        \caption{IP address parts and {\color{brown}mask}}
         \label{fig:inside_ip_address_mask}
       \end{figure}
     \end{block}
@@ -75,89 +74,89 @@
 
   \begin{frame}
     \frametitle{IP addressing fundamentals}
-    \begin{block}{Is that a host?}
+    \begin{block}{Is that an address?}
       \begin{itemize}
         \item Network address,\pause
-        \item Nodes,\pause
+        \item Hosts,\pause
         \item Broadcast address.\pause
       \end{itemize}
     \end{block}
     \begin{block}{Within the same network}
       \begin{itemize}
-        \item All addresses have the same network bits,\pause
-        \item All nodes have different host bits,\pause
-        \item Network address has zeros for host bits,\pause
-        \item Broadcast address has ones for host bits.
+        \item All addresses have the same {\color{ForestGreen}network} bits,\pause
+        \item Network address has zeros for {\color{blue}host} bits: {\color{ForestGreen}x.x.x}.{\color{blue}0*},\pause
+        \item All {\color{blue}hosts} have different {\color{blue}host} bits: {\color{ForestGreen}x.x.x}.{\color{blue}[0-1]*},\pause
+        \item Broadcast address has ones for {\color{blue}host} bits: {\color{ForestGreen}x.x.x}.{\color{blue}1*}.
       \end{itemize}
     \end{block}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Example: network 1}
+    \frametitle{IP addressing fundamentals}
     \begin{figure}
         \centering
       \begin{tabular}{|r|cccc|}
         \hline
-        \multirow{2}{*}{Mask /24} & {\color{brown}255} & {\color{brown}255} & {\color{brown}255} & {\color{brown}0} \\
-        & {\color{brown}11111111} & {\color{brown}11111111} & {\color{brown}11111111} & {\color{brown}00000000} \\ \hline
-        \multirow{2}{*}{Network address} & \color{brown}192 & \color{brown}168 & \color{brown}1 & \color{blue}0 \\
-        & \color{brown}11000000 & \color{brown}10101000 & \color{brown}00000001 & \color{blue}00000000 \\ \hline
-        \multirow{2}{*}{First nodes address} & \color{brown}192 & \color{brown}168 & \color{brown}1 & \color{blue}1 \\
-        & \color{brown}11000000 & \color{brown}10101000 & \color{brown}00000001 & \color{blue}00000001 \\ \hline
-        \multirow{2}{*}{Last nodes address} & \color{brown}192 & \color{brown}168 & \color{brown}1 & \color{blue}254 \\
-        & \color{brown}11000000 & \color{brown}10101000 & \color{brown}00000001 & \color{blue}11111110 \\ \hline
-        \multirow{2}{*}{Broadcast address} & \color{brown}192 & \color{brown}168 & \color{brown}1 & \color{blue}255 \\
-        & \color{brown}11000000 & \color{brown}10101000 & \color{brown}00000001 & \color{blue}11111111 \\ \hline
+        Mask {\color{brown}/24} & {\color{brown}255} & {\color{brown}255} & {\color{brown}255} & {\color{fuchsia}0} \\
+        254 {\color{blue}hosts}& {\color{brown}11111111} & {\color{brown}11111111} & {\color{brown}11111111} & {\color{fuchsia}00000000} \\ \hline
+        \multirow{2}{*}{Network address} & \color{ForestGreen}192 & \color{ForestGreen}168 & \color{ForestGreen}1 & \color{blue}0 \\
+        & \color{ForestGreen}11000000 & \color{ForestGreen}10101000 & \color{ForestGreen}00000001 & \color{blue}00000000 \\ \hline
+        \multirow{2}{*}{First host} & \color{ForestGreen}192 & \color{ForestGreen}168 & \color{ForestGreen}1 & \color{blue}1 \\
+        & \color{ForestGreen}11000000 & \color{ForestGreen}10101000 & \color{ForestGreen}00000001 & \color{blue}00000001 \\ \hline
+        \multirow{2}{*}{Last host} & \color{ForestGreen}192 & \color{ForestGreen}168 & \color{ForestGreen}1 & \color{blue}254 \\
+        & \color{ForestGreen}11000000 & \color{ForestGreen}10101000 & \color{ForestGreen}00000001 & \color{blue}11111110 \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{ForestGreen}192 & \color{ForestGreen}168 & \color{ForestGreen}1 & \color{blue}255 \\
+        & \color{ForestGreen}11000000 & \color{ForestGreen}10101000 & \color{ForestGreen}00000001 & \color{blue}11111111 \\ \hline
       \end{tabular}
       \caption{IP address example 1}
     \end{figure}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Example: network 2}
+    \frametitle{IP addressing fundamentals}
     \begin{figure}
         \centering
       \begin{tabular}{|r|cccc|}
         \hline
-        \multirow{2}{*}{Mask /16} & {\color{brown}255} & {\color{brown}255} & {\color{brown}0} & {\color{brown}0} \\
-        & {\color{brown}11111111} & {\color{brown}11111111} & {\color{brown}00000000} & {\color{brown}00000000} \\ \hline
-        \multirow{2}{*}{Network address} & \color{brown}172 & \color{brown}17 & \color{blue}0 & \color{blue}0 \\
-        & \color{brown}10101100 & \color{brown}00010001 & \color{blue}00000000 & \color{blue}00000000 \\ \hline
-        \multirow{2}{*}{First nodes address} & \color{brown}172 & \color{brown}17 & \color{blue}0 & \color{blue}1 \\
-        & \color{brown}10101100 & \color{brown}00010001 & \color{blue}00000000 & \color{blue}00000001 \\ \hline
-        \multirow{2}{*}{Last nodes address} & \color{brown}172 & \color{brown}17 & \color{blue}255 & \color{blue}254 \\
-        & \color{brown}10101100 & \color{brown}00010001 & \color{blue}11111111 & \color{blue}11111110 \\ \hline
-        \multirow{2}{*}{Broadcast address} & \color{brown}172 & \color{brown}17 & \color{blue}255 & \color{blue}255 \\
-        & \color{brown}10101100 & \color{brown}00010001 & \color{blue}11111111 & \color{blue}11111111 \\ \hline
+        Mask {\color{brown}/16} & {\color{brown}255} & {\color{brown}255} & {\color{fuchsia}0} & {\color{fuchsia}0} \\
+        65.534 {\color{blue}hosts} & {\color{brown}11111111} & {\color{brown}11111111} & {\color{fuchsia}00000000} & {\color{fuchsia}00000000} \\ \hline
+        \multirow{2}{*}{Network address} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{blue}0 & \color{blue}0 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{blue}00000000 & \color{blue}00000000 \\ \hline
+        \multirow{2}{*}{First host} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{blue}0 & \color{blue}1 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{blue}00000000 & \color{blue}00000001 \\ \hline
+        \multirow{2}{*}{Last host} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{blue}255 & \color{blue}254 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{blue}11111111 & \color{blue}11111110 \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{blue}255 & \color{blue}255 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{blue}11111111 & \color{blue}11111111 \\ \hline
       \end{tabular}
       \caption{IP address example 2}
     \end{figure}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Formula}
-    \begin{block}{How many \sout{hosts} nodes with a N-bit mask?}
-      $2^{32-N}-2$\pause, the $-2$ moves out network and broadcast addresses which are not nodes.\pause
+    \frametitle{IP addressing fundamentals}
+    \begin{block}{\textbf{Formula}: how many {\color{blue}hosts} with a N-bit mask?}
+      $2^{32-N}-2$\pause, the $-2$ moves out network and broadcast addresses which are not {\color{blue}hosts}.\pause
       \begin{itemize}
-        \item 24-bit mask: $2^{32-24}-2 = 2^{8}-2 = 254$ nodes \pause
-        \item 16-bit mask: $2^{32-16}-2 = 2^{16}-2 = 65.534$ nodes \pause
-        \item 8-bit mask: $2^{32-8}-2 = 2^{24}-2 = 16.777.214$ nodes
+        \item 24-bit {\color{brown}mask}: $2^{32-24}-2 = 2^{8}-2 = 254$ {\color{blue}hosts} \pause
+        \item 16-bit {\color{brown}mask}: $2^{32-16}-2 = 2^{16}-2 = 65.534$ {\color{blue}hosts} \pause
+        \item 8-bit {\color{brown}mask}: $2^{32-8}-2 = 2^{24}-2 = 16.777.214$ {\color{blue}hosts}
       \end{itemize}
     \end{block}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Public and private addresses}
-    \begin{block}{Public}
+    \frametitle{IP addressing fundamentals}
+    \begin{block}{Public addresses}
       \begin{itemize}
         \item Most of IP addresses \pause
         \item Registered ISP and large organizations inherit blocks of public addresses from IANA\footnote{Internet Assigned Numbers Authority} \pause
         \item Usage of not registered public addresses is forbidden.
       \end{itemize}
     \end{block}
-    \begin{block}{Private}
+    \begin{block}{Private addresses}
       \begin{itemize}
-        \item Privates addresses are A, B and C classes (see after)\pause
+        \item Privates addresses are A, B and C classes (note all, see after)\pause
         \item No registration needed \pause
         \item Not routed across the Internet \pause
         \item Proxy, NAT and private addresses solved IPv4 shortage.
@@ -165,33 +164,37 @@
     \end{block}
   \end{frame}
 
-  
   \begin{frame}
     \frametitle{Classful IP Addressing}
     \begin{figure}
       \centering
-      \begin{tabular}{|r||c|c|c|}
-        \hline
-        Class & A & B & C \\ \hline \hline
-        First octet & 1 - 126 & 128 - 191 & 192 - 223 \\ \hline
-        First octet pattern 0b& 0* & 10* & 110* \\ \hline
-        \multirow{2}{*}{\color{brown}Network mask} & 255.0.0.0 & 255.255.0.0 & 255.255.255.0\\
-         & /8 & /16 & /24 \\ \hline
-        \multirow{2}{*}{IP addresses range} & 1.0.0.0 & 128.0.0.0 & 192.0.0.0\\
-        & 126.0.0.0 & 191.255.0.0 & 223.255.255.0 \\ \hline
-        Number of nodes & 16777214 & 65534 & 254 \\ \hline
-      \end{tabular}
+      \resizebox{11.5cm}{!} {
+	\begin{tabular}{|r||c|c|c|}
+	  \hline
+	  Class & A & B & C \\ \hline \hline
+	  First octet & {\color{ForestGreen}1} - {\color{ForestGreen}126} & {\color{ForestGreen}128} - {\color{ForestGreen}191} & {\color{ForestGreen}192} - {\color{ForestGreen}223} \\ \hline
+	  First octet 0b& {\color{ForestGreen}0*} & {\color{ForestGreen}10*} & {\color{ForestGreen}110*} \\ \hline
+	  \multirow{2}{*}{\color{brown}Network mask} & {\color{brown}255}.{\color{fuchsia}0.0.0} & {\color{brown}255.255}.{\color{fuchsia}0.0} & {\color{brown}255.255.255}.{\color{fuchsia}0}\\
+	  & {\color{brown}/8} & {\color{brown}/16} & {\color{brown}/24} \\ \hline
+	  \multirow{2}{*}{IP addresses range} & {\color{ForestGreen}1}.{\color{blue}0.0.0} & {\color{ForestGreen}128.0}.{\color{blue}0.0} & {\color{ForestGreen}192.0.0}.{\color{blue}0}\\
+	  & {\color{ForestGreen}126}.{\color{blue}0.0.0} & {\color{ForestGreen}191.255}.{\color{blue}0.0} & {\color{ForestGreen}223.255.255}.{\color{blue}0} \\ \hline
+	  \multirow{2}{*}{Private range}
+	  & {\color{ForestGreen}10}.{\color{blue}0.0.0} 	    & {\color{ForestGreen}176.16}.{\color{blue}0.0}     & {\color{ForestGreen}192.168.0}.{\color{blue}0}\\
+	  & {\color{ForestGreen}10}.{\color{blue}255.255.255} & {\color{ForestGreen}176.31}.{\color{blue}255.255} & {\color{ForestGreen}192.168.255}.{\color{blue}0} \\ \hline
+	  Number of {\color{blue}hosts} & 16.777.214 & 65.534 & 254 \\ \hline
+	\end{tabular}
+      }
       \caption{Three main classes}
     \end{figure}
-    Where did 127.0.0.0/8 go ?!
+    Where did {\color{ForestGreen}127}.{\color{blue}0.0.0}{\color{brown}/8} go ?!
   \end{frame}
 
   \begin{frame}
     \frametitle{Classful IP Addressing}
     \begin{block}{Class D}
       \begin{itemize}
-	\item First octet: 224 - 239 \pause
-	\item First octet pattern: 1110* \pause
+	\item First octet: {\color{ForestGreen}224} - {\color{ForestGreen}239} \pause
+	\item First octet pattern: {\color{ForestGreen}1110*} \pause
 	\item Theses IP addresses are multicast addresses.\pause
       \end{itemize}
     \end{block}
@@ -202,11 +205,105 @@
       \end{itemize}
     \end{block}
   \end{frame}
+
   \begin{frame}
+    \frametitle{Classful IP Addressing}
     \begin{block}{Reserved addresses}
       \begin{itemize}
 	\item 0.0.0.0 used in routing (seen further) \pause
-	\item 127.0.0.0/8: loopback addresses (127.0.0.1 - 127.255.255.254).
+	\item {\color{ForestGreen}127}.{\color{blue}0.0.0}{\color{brown}/8}: loopback addresses ({\color{ForestGreen}127}.{\color{blue}0.0.1} - {\color{ForestGreen}127}.{\color{blue}255.255.254}).
       \end{itemize}
     \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Classful IP Addressing}
+    \begin{itemize}
+      \item Class A (16 m-addresses) and B (65 k-adresses) are too large! \pause
+      \item Class C (254 addresses) is manageable. A and B are not, and then not fully utilized... That's a waste of IP addresses! \pause
+    \end{itemize}
+    Means to limit the number of nodes on a network (regardless of the class) and, thus, improve the manageability, are needed. Three means for it:
+    \begin{itemize}
+      \item Subnet, \pause
+      \item VLSM (Variable Length Subnet Mask), \pause
+      \item CIDR (Classless Inter-Domain Routing).
+    \end{itemize}
+  \end{frame}
+
+
+
+
+
+
+
+
+  \begin{frame}
+    \frametitle{Subnet and VLSM}
+    \begin{itemize}
+      \item Class A (16 m-addresses) and B (65 k-adresses) are too large! \pause
+      \item Class C (254 addresses) is manageable. A and B are not, and then not fully utilized... That's a waste of IP addresses!
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Subnet and VLSM}
+    \begin{figure}
+        \centering
+      \begin{tabular}{|r|cccc|}
+        \hline
+        Mask {\color{brown}/16} & {\color{brown}255} & {\color{brown}255} & {\color{fuchsia}0} & {\color{fuchsia}0} \\
+        65.534 {\color{blue}hosts} & {\color{brown}11111111} & {\color{brown}11111111} & {\color{fuchsia}00000000} & {\color{fuchsia}00000000} \\ \hline
+        \multirow{2}{*}{Network address} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{blue}0 & \color{blue}0 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{blue}00000000 & \color{blue}00000000 \\ \hline
+        \multirow{2}{*}{First host} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{blue}0 & \color{blue}1 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{blue}00000000 & \color{blue}00000001 \\ \hline
+        \multirow{2}{*}{Last host} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{blue}255 & \color{blue}254 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{blue}11111111 & \color{blue}11111110 \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{blue}255 & \color{blue}255 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{blue}11111111 & \color{blue}11111111 \\ \hline
+      \end{tabular}
+      \caption{IP address example 2}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Subnet and VLSM}
+    \begin{figure}
+        \centering
+      \begin{tabular}{|r|cccc|}
+        \hline
+        Mask {\color{brown}/12} & \color{brown}255 & \color{brown}24\color{fuchsia}0 & \color{fuchsia}0 & \color{fuchsia}0 \\
+        1.048.574 {\color{blue}hosts} & \color{brown}11111111 & \color{brown}1111\color{fuchsia}0000 & \color{fuchsia}00000000 & \color{fuchsia}00000000 \\ \hline
+        \multirow{2}{*}{Network address} & \color{ForestGreen}172 & \color{ForestGreen}6\color{blue}4 & \color{blue}0 & \color{blue}0 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}0100\color{blue}0000 & \color{blue}00000000 & \color{blue}00000000 \\ \hline
+        \multirow{2}{*}{First host} & \color{ForestGreen}172 & \color{ForestGreen}6\color{blue}4 & \color{blue}0 & \color{blue}1 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}0100\color{blue}0000 & \color{blue}00000000 & \color{blue}00000001 \\ \hline
+        \multirow{2}{*}{Last host} & \color{ForestGreen}172 & \color{ForestGreen}7\color{blue}9 & \color{blue}255 & \color{blue}254 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}0100\color{blue}1111 & \color{blue}11111111 & \color{blue}11111110 \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{ForestGreen}172 & \color{ForestGreen}7\color{blue}9 & \color{blue}255 & \color{blue}255 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}0100\color{blue}1111 & \color{blue}11111111 & \color{blue}11111111 \\ \hline
+      \end{tabular}
+      \caption{IP address example 3}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Subnet and VLSM}
+    \begin{figure}
+        \centering
+      \begin{tabular}{|r|cccc|}
+        \hline
+        Mask {\color{brown}/10} & \color{brown}255 & \color{brown}1\color{fuchsia}92 & \color{fuchsia}0 & \color{fuchsia}0 \\
+         4.194.302 {\color{blue}hosts} & \color{brown}11111111 & \color{brown}11\color{fuchsia}000000 & \color{fuchsia}00000000 & \color{fuchsia}00000000 \\ \hline
+        \multirow{2}{*}{Network address} & \color{ForestGreen}172 & \color{ForestGreen}6\color{blue}4 & \color{blue}0 & \color{blue}0 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01\color{blue}000000 & \color{blue}00000000 & \color{blue}00000000 \\ \hline
+        \multirow{2}{*}{First host} & \color{ForestGreen}172 & \color{ForestGreen}6\color{blue}4 & \color{blue}0 & \color{blue}1 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01\color{blue}000000 & \color{blue}00000000 & \color{blue}00000001 \\ \hline
+        \multirow{2}{*}{Last host} & \color{ForestGreen}172 & \color{ForestGreen}1\color{blue}27 & \color{blue}255 & \color{blue}254 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01\color{blue}111111 & \color{blue}11111111 & \color{blue}11111110 \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{ForestGreen}172 & \color{ForestGreen}1\color{blue}27 & \color{blue}255 & \color{blue}255 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01\color{blue}111111 & \color{blue}11111111 & \color{blue}11111111 \\ \hline
+      \end{tabular}
+      \caption{IP address example 4}
+    \end{figure}
   \end{frame}
