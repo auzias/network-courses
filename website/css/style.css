@@ -1,0 +1,17 @@
+@import "./bootstrap.min.css";
+
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.grey {
+  color: #ddd;
+}
