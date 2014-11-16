@@ -233,10 +233,6 @@
 
 
 
-
-
-
-
   \begin{frame}
     \frametitle{Subnet and VLSM}
     \begin{itemize}
@@ -306,4 +302,102 @@
       \end{tabular}
       \caption{IP address example 4}
     \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Subnet and VLSM}
+    \begin{figure}
+        \centering
+      \begin{tabular}{|r|cccc|}
+        \hline
+        Mask {\color{brown}/31} & \color{brown}255 & \color{brown}255 & \color{brown}255 & \color{fuchsia}254 \\
+         0 {\color{blue}host} & \color{brown}11111111 & \color{brown}11111111 & \color{brown}11111111 & \color{brown}1111111\color{fuchsia}0 \\ \hline
+        \multirow{2}{*}{Network address} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{ForestGreen}0 & \color{ForestGreen}25\color{blue}4 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{ForestGreen}00000000 & \color{ForestGreen}1111111\color{fuchsia}0 \\ \hline
+        \multirow{2}{*}{First host} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{ForestGreen}0 & \color{blue}? \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{ForestGreen}00000000 & \color{ForestGreen}1111111\color{fuchsia}? \\ \hline
+        \multirow{2}{*}{Last host} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{ForestGreen}255 & \color{blue}? \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{ForestGreen}00000000 & \color{ForestGreen}1111111\color{fuchsia}? \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{ForestGreen}255 & \color{blue}255 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{ForestGreen}00000000 & \color{ForestGreen}1111111\color{fuchsia}1 \\ \hline
+      \end{tabular}
+      \caption{IP address example 5}
+    \end{figure}
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{Subnet and VLSM}
+    \begin{figure}
+        \centering
+      \begin{tabular}{|r|cccc|}
+        \hline
+        Mask {\color{brown}/30} & \color{brown}255 & \color{brown}255 & \color{brown}255 & \color{fuchsia}252 \\
+         2 {\color{blue}hosts} & \color{brown}11111111 & \color{brown}11111111 & \color{brown}11111111 & \color{brown}111111\color{fuchsia}00 \\ \hline
+        \multirow{2}{*}{Network address} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{ForestGreen}0 & \color{ForestGreen}25\color{blue}2 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{ForestGreen}00000000 & \color{ForestGreen}1111111\color{fuchsia}00 \\ \hline
+        \multirow{2}{*}{First host} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{ForestGreen}0 & \color{ForestGreen}25\color{blue}3 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{ForestGreen}00000000 & \color{ForestGreen}1111111\color{fuchsia}01 \\ \hline
+        \multirow{2}{*}{Last host} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{ForestGreen}255 & \color{ForestGreen}25\color{blue}4 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{ForestGreen}00000000 & \color{ForestGreen}1111111\color{fuchsia}10 \\ \hline
+        \multirow{2}{*}{Broadcast address} & \color{ForestGreen}172 & \color{ForestGreen}64 & \color{ForestGreen}255 & \color{ForestGreen}25\color{blue}5 \\
+        & \color{ForestGreen}10101100 & \color{ForestGreen}01000000 & \color{ForestGreen}00000000 & \color{ForestGreen}1111111\color{fuchsia}11 \\ \hline
+      \end{tabular}
+      \caption{IP address example 6}
+    \end{figure}
+  \end{frame}
+
+
+
+  \begin{frame}
+    %\frametitle{Subnet masks cheat sheet}
+    \begin{figure}
+      \centering
+      \resizebox{7cm}{!} {
+	\begin{tabular}{|lccr|}
+	  \hline
+	  \multicolumn{2}{|c|}{Netmask} & CIDR & hosts \\ \hline
+	  255.255.255.255 & 11111111.11111111.11111111.11111111 & /32 & single address \\
+	  255.255.255.254 & 11111111.11111111.11111111.11111110 & /31 & Unusable \\
+	  255.255.255.252 & 11111111.11111111.11111111.11111100 & /30 & 2 \\
+	  255.255.255.248 & 11111111.11111111.11111111.11111000 & /29 & 6 \\
+	  255.255.255.240 & 11111111.11111111.11111111.11110000 & /28 & 14 \\
+	  255.255.255.224 & 11111111.11111111.11111111.11100000 & /27 & 30 \\
+	  255.255.255.192 & 11111111.11111111.11111111.11000000 & /26 & 62 \\
+	  255.255.255.128 & 11111111.11111111.11111111.10000000 & /25 & 126 \\
+	  255.255.255.0   & 11111111.11111111.11111111.00000000 & /24 & 254 \\
+	  255.255.254.0   & 11111111.11111111.11111110.00000000 & /23 & 510 \\
+	  255.255.252.0   & 11111111.11111111.11111100.00000000 & /22 & 1.022 \\
+	  255.255.248.0   & 11111111.11111111.11111000.00000000 & /21 & 2.046 \\
+	  255.255.240.0   & 11111111.11111111.11110000.00000000 & /20 & 4.094 \\
+	  255.255.224.0   & 11111111.11111111.11100000.00000000 & /19 & 8.190 \\
+	  255.255.192.0   & 11111111.11111111.11000000.00000000 & /18 & 16.382 \\
+	  255.255.128.0   & 11111111.11111111.10000000.00000000 & /17 & 32.766 \\
+	  255.255.0.0     & 11111111.11111111.00000000.00000000 & /16 & 65.534 \\
+	  255.254.0.0     & 11111111.11111110.00000000.00000000 & /15 & 131.070 \\
+	  255.252.0.0     & 11111111.11111100.00000000.00000000 & /14 & 262.142 \\
+	  255.248.0.0     & 11111111.11111000.00000000.00000000 & /13 & 524.286 \\
+	  255.240.0.0     & 11111111.11110000.00000000.00000000 & /12 & 1.048.574 \\
+	  255.224.0.0     & 11111111.11100000.00000000.00000000 & /11 & 2.097.152 \\
+	  255.192.0.0     & 11111111.11000000.00000000.00000000 & /10 & 4.194.302 \\
+	  255.128.0.0     & 11111111.10000000.00000000.00000000 & /9  & 8.388.606 \\
+	  255.0.0.0       & 11111111.00000000.00000000.00000000 & /8  & 16.777.214 \\
+	  254.0.0.0       & 11111110.00000000.00000000.00000000 & /7  & 33.554.430\\
+	  252.0.0.0       & 11111100.00000000.00000000.00000000 & /6  & 67.108.862\\
+	  248.0.0.0       & 11111000.00000000.00000000.00000000 & /5  & 134.217.726\\
+	  240.0.0.0       & 11110000.00000000.00000000.00000000 & /4  & 268.435.454\\
+	  224.0.0.0       & 11100000.00000000.00000000.00000000 & /3  & 536.870.910\\
+	  192.0.0.0       & 11000000.00000000.00000000.00000000 & /2  & 1.073.741.822\\
+	  128.0.0.0       & 10000000.00000000.00000000.00000000 & /1  & 2.147.483.646\\
+	  0.0.0.0         & 00000000.00000000.00000000.00000000 & /0  & IP space \\ \hline
+	\end{tabular}
+      }
+      \caption{Subnet mask cheat sheet}
+    \end{figure}
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{Subnet and VLSM}
+    That's it for today's. Let's practice before starting routing!
   \end{frame}
