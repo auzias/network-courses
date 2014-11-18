@@ -240,6 +240,20 @@ What does this acronym stand for? What and how is it used for? Is there any diff
     \end{itemize}
 \end{enumerate}
 
+\subsection{Designing}
+A inter-network is as follow:
+\begin{itemize}
+  \item With two routers (A and B) within the subnetwork having 10.0.0.0 has IP address.
+  \item Router A has a subnetwork (name n1), with 40 hosts, having 192.168.3.64 IP address.
+  \item Router A has a subnetwork (name n2), with 10 hosts, having 192.168.3.128 IP address.
+  \item Router B has a subnetwork (name n3), with 1500 hosts, having 176.16.0.0 IP address.
+  \item Router B has a subnetwork (name n4), with 30 hosts, having 176.31.25.224 IP address.
+  \item n3 and n4 share the physical equipment (switches) but are on different VLAN.
+\end{itemize}
 
+How many different subnetworks are in this network?\\
+How many NIC do the routers A and B have?\\
+Draw the schema of the network?\\
+Design, using the best subnet mask for each subnet.
 
 \end{document}
