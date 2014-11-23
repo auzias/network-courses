@@ -12,10 +12,11 @@
   \begin{frame}
     \frametitle{Concepts}
       \begin{itemize}
-        \item IP addressing fundamentals,\pause
-        \item Classfull IP addressing,\pause
-        \item Subnet and VLSM (Variable length subnet masks),\pause
-        \item CIDR (Classless inter-domain routing).
+        \item IP addressing fundamentals,
+        \item Classfull IP addressing,
+        \item Subnet and VLSM (Variable length subnet masks),
+        \item CIDR (Classless inter-domain routing),
+        \item Routing.
       \end{itemize}
   \end{frame}
 
@@ -396,8 +397,93 @@
     \end{figure}
   \end{frame}
 
+  \begin{frame}
+    \frametitle{CIDR}
+        \begin{block}{Classless Inter-domain Routing?}\pause
+	  \begin{itemize}
+	    \item Wait! What is routing?
+	  \end{itemize}
+        \end{block}
+  \end{frame}
 
   \begin{frame}
-    \frametitle{Subnet and VLSM}
-    That's it for today's. Let's practice before starting routing!
+    \frametitle{Routing}
+    Algorithm processed to decide where to forward a packet
+	\begin{block}{Any router must}
+	  \begin{itemize}
+	    \item know where any packet should be directed
+	    \item send directly the packets to the packet's destination if the router and the destination are on the same network
+	  \end{itemize}
+        \end{block}
+	\begin{block}{Any node}
+	  \begin{itemize}
+	    \item on any network can communicate directly with all the nodes within the same network
+	    \item can connect to any node using its gateway
+	    \item needs to be aware of its gateway to communicate with nodes on other networks
+	  \end{itemize}
+        \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Routing}
+	\begin{block}{Route}
+	  \begin{itemize}
+	    \item Destination
+	    \item Gateway
+	    \item Masks
+	    \item Metric
+	  \end{itemize}
+        \end{block}
+        \pause
+	\begin{figure}[t]
+          \centering
+          \includegraphics[height=1.3cm]{./imgs/routing-table.png}
+          \caption{Routing table}
+          \label{fig:routing_table}
+        \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Routing}
+    \begin{figure}[t]
+      \centering
+      \includegraphics[height=1.3cm]{./imgs/routing-table.png}
+      \caption{Routing table}
+      \label{fig:routing_table}
+    \end{figure}
+    \begin{block}{0.0.0.0 ?}
+      \begin{itemize}
+	\item Default address
+	\item Default route
+	\item Default gateway
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Routing}
+    \begin{block}{Example}
+      What would the routing table of this router will look like?
+    \end{block}
+    %TODO: draw a router with a four routes and three NIC
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Routing}
+    \begin{block}{Static or dynamic ?} \pause
+      We will see this later
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{CIDR}
+    Combine 2+ networks' into one bigger to facilitate routing.
+    \pause
+    \begin{block}{Classless Inter-domain Routing?}
+      \begin{itemize}
+	\item Does a routing table having both (192.168.0.0/24, E0), (192.168.1.0/24, E0), (10.0.0.0/8, S0) can be shorten? \pause
+	\item Does a routing table having both (192.168.0.0/24, E0), (192.168.1.0/24, E0), (192.168.8.0/24, E0), (10.0.0.0/8, S0) can be shorten? \pause
+	\item Does a routing table having both (192.168.0.0/24, E0), (192.168.4.0/24, E0), (192.168.1.0/24, E1), (10.0.0.0/8, S0) can be shorten?
+      \end{itemize}
+    \end{block}
   \end{frame}
