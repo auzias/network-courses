@@ -3,7 +3,7 @@
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{wrapfig}
-\usepackage[margin=3cm, tmargin=2cm]{geometry}
+\usepackage[margin=1.5cm, tmargin=1.5cm]{geometry}
 \usepackage{color}
 \usepackage{hyperref}
 \usepackage{array}
@@ -15,8 +15,8 @@
 \author{Maël Auzias}
 \maketitle
 
-\tableofcontents
-\pagebreak
+%\tableofcontents
+%\pagebreak
 
 
 \section{Introduction}
@@ -168,7 +168,6 @@ By using MDPC (Multidimensional parity-check code) the data received are: \verb$
 \subsubsection{Half or full?}
 What is the difference between half and full duplex medium?
 
-\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%      Layer 2       %%
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -182,7 +181,7 @@ What are the sublayer of the data layer?
 According to the packet \ref{fig:arp_req_ex}, which machine tried to ping which machine? Give MAC and IP address of both machines.
   \begin{figure}[h]
   \centering
-  \resizebox{17cm}{!} {
+  \resizebox{16cm}{!} {
     \begin{tabular}{lcccccccccccccccc}
       \textbf{0000} & ff & ff & ff & ff & ff & ff & 00 & 1b & 11 & 09 & aa & 88 & 08 & 06 & 00 & 01 \\
       \textbf{0010} & 08 & 00 & 06 & 04 & 00 & 01 & 00 & 1b & 11 & 09 & aa & 88 & c0 & a8 & 00 & 3b \\
@@ -197,7 +196,7 @@ For security reasons, the administrator of a machine disable the ping response. 
 \subsection{CSMA/CA}
 What does this acronym stand for? What and how is it used for? Is there any differences for the CSMA/CA between half and full duplex medium?
 
-\pagebreak
+%\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%      Layer 3       %%
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -264,5 +263,27 @@ How many different subnetworks are in this network?\\
 How many NIC do the routers A and B have?\\
 Draw the schema of the network?\\
 Design, using the best subnet mask for each subnet (subnet masks, subnetwork IP address, first node IP address, last node IP address, broadcast address).
+
+\subsection{CIDR}
+\subsubsection{Subnetworks}
+The following networks are in a routing-table. Is it possible to combine routes? How? Which ones?
+\begin{figure}[h]
+  \centering
+  \resizebox{10cm}{!} {
+    \begin{tabular}{lllr}
+      \textbf{Destination} & \textbf{Gateway} & \textbf{Genmask} & \textbf{Iface} \\ \hline
+      192.168.0.0   & 10.0.0.2 & 255.255.255.128 & E0 \\
+      130.1.2.0     & 10.0.0.6 & 255.255.0.0     & E1 \\
+      192.168.1.112 & 10.0.0.2 & 255.255.255.240 & E0 \\
+      192.168.3.0   & 10.0.0.2 & 255.255.248.0   & E0 \\
+      192.168.5.0   & 10.0.0.6 & 255.255.248.0   & E1 \\
+    \end{tabular}
+  }
+  \caption{Routing table example}
+  \label{fig:rting-tbl}
+\end{figure}
+
+What is the important information that is missing to route?
+
 
 \end{document}
