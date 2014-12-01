@@ -16,7 +16,8 @@
         \item Classfull IP addressing,
         \item Subnet and VLSM (Variable length subnet masks),
         \item CIDR (Classless inter-domain routing),
-        \item Routing.
+        \item Routing,
+        \item IPv6.
       \end{itemize}
   \end{frame}
 
@@ -407,7 +408,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Routing}
+    \frametitle{Routing Principles}
     Algorithm processed to decide where to forward a packet
 	\begin{block}{Any router must}
 	  \begin{itemize}
@@ -425,7 +426,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Routing}
+    \frametitle{Routing Principles}
 	\begin{block}{Route}
 	  \begin{itemize}
 	    \item Destination
@@ -444,7 +445,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Routing}
+    \frametitle{Routing Principles}
     \begin{figure}[t]
       \centering
       \includegraphics[height=1.3cm]{./imgs/routing-table.png}
@@ -453,23 +454,22 @@
     \end{figure}
     \begin{block}{0.0.0.0 ?}
       \begin{itemize}
-	\item Default address
-	\item Default route
-	\item Default gateway
+        \item Default address
+        \item Default route
+        \item Default gateway
       \end{itemize}
     \end{block}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Routing}
+    \frametitle{Routing Principles}
     \begin{block}{Example}
       What would the routing table of this router will look like?
     \end{block}
-    %TODO: draw a router with a four routes and three NIC
   \end{frame}
 
   \begin{frame}
-    \frametitle{Routing}
+    \frametitle{Routing Principles}
     \begin{block}{Static or dynamic ?} \pause
       We will see this later
     \end{block}
@@ -481,9 +481,136 @@
     \pause
     \begin{block}{Classless Inter-domain Routing?}
       \begin{itemize}
-	\item Does a routing table having both (192.168.0.0/24, E0), (192.168.1.0/24, E0), (10.0.0.0/8, S0) can be shorten? \pause
-	\item Does a routing table having both (192.168.0.0/24, E0), (192.168.1.0/24, E0), (192.168.8.0/24, E0), (10.0.0.0/8, S0) can be shorten? \pause
-	\item Does a routing table having both (192.168.0.0/24, E0), (192.168.4.0/24, E0), (192.168.1.0/24, E1), (10.0.0.0/8, S0) can be shorten?
+        \item Does a routing table having both (192.168.0.0/24, E0), (192.168.1.0/24, E0), (10.0.0.0/8, S0) can be shorten? \pause
+        \item Does a routing table having both (192.168.0.0/24, E0), (192.168.1.0/24, E0), (192.168.8.0/24, E0), (10.0.0.0/8, S0) can be shorten? \pause
+        \item Does a routing table having both (192.168.0.0/24, E0), (192.168.4.0/24, E0), (192.168.1.0/24, E1), (10.0.0.0/8, S0) can be shorten?
       \end{itemize}
     \end{block}
   \end{frame}
+
+  \begin{frame}
+    \frametitle{Routing Protocol}
+    \begin{itemize}
+      \item RIP: Routing Information Protocol \pause
+      \item OSPF: Open Shortest Path First \pause
+      \item EIGRP: Enhanced Interior Gateway Routing Protocol
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Routing Protocol}
+      \begin{block}{RIP v1}
+        \begin{itemize}
+          \item Classful routing \pause
+          \item Periodic updates (30 sec) .. \pause
+          \item ..by broadcasting (!) \pause
+          \item Metric is hop-count (max = 15, infinite = 16) \pause
+          \item Timer (180 sec) to tag route as invalid (metric = 16) \pause
+          \item no subnet, no VLSM, no CIDR, no router authentication
+        \end{itemize}
+      \end{block}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Routing Protocol}
+      \begin{block}{RIP v2}
+        \begin{itemize}
+          \item Classless routing \pause
+          \item Multicast (224.0.0.9) \pause
+          \item VLSM support \pause
+          \item Route summarization \pause
+          \item "Authentication" (MD5)
+        \end{itemize}
+      \end{block}
+      \pause
+      \begin{center} RIPng is the next RIP version for support of IPv6 \end{center}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Routing Protocol}
+      \begin{enumerate}
+        \item Router getting online broadcasts Request message \pause
+        \item RIP Router send broadcasts Response message with their routing table \pause
+        \item When Update timers (from other routers) expire routing table\footnote{not always all the routing table} is sent again \pause
+        \item When Invalid timer expires, the metric of the route is set to 16 (unreachable) \pause
+        \item When Flush timer expires, the 16-metric routes are removed from the routing table \pause
+        \item When a new router (or new metric) is sent, a Hold-down timer is started to stabilize the network.
+      \end{enumerate}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Routing Protocol}
+    \begin{center}OSPF \end{center}
+      \begin{itemize}
+        \item Classless \pause
+        \item IPv4 and IPv6 \pause
+        \item VSLM \pause
+        \item CIDR \pause
+        \item Build a topology of the network \pause
+        \item Dijkstra \pause
+        \item Metric = f(hop-count, bandwidth, link reliability) \pause
+        \item Subdivided into area (a 32-bit number) \pause
+        \item Multicast \pause
+        \item Authentication support (update only from trusted routers)
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Routing Protocol}
+    \begin{center}EIGRP \end{center}
+      \begin{itemize}
+        \item Ehanced IGRP (to support classless routing) \pause
+        \item IPv4 and IPv6 \pause
+        \item VSLM \pause
+        \item CIDR \pause
+        \item Build a topology of the network \pause
+        \item Dijkstra \pause
+        \item Metric = f(bandwidth, load, delay, reliability) \pause
+        \item Authentication support
+      \end{itemize}
+  \end{frame}
+
+%% IPv6
+  \begin{frame}
+    \frametitle{IPv6}
+    \begin{center}Aims \end{center}
+    \begin{itemize}
+      \item Support billions of hosts (even with inefficient IP addressing) \pause
+      \item Reduce routing table size \pause
+      \item Simplified protocol to allow routers to process packets faster \pause
+      \item Better security \pause
+      \item Better real-time QoS \pause
+      \item Better multicast diffusion (scope) \pause
+      \item Being able to move, without changing IP address \pause
+      \item Make the protocol able to evolve \pause
+      \item Make the protocol able to coexist with newer version
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{IPv6}
+    \begin{center}IPv4 vs IPv6 \end{center}
+    \begin{itemize}
+      \item not compatible \pause
+      \item IPv4 address: 4 octets, IPv6: 16 octets (2$^{128}$ = 3x10$^{138}$) \pause
+      \item Packet Header, IPv6: 7 fields, IPv4:13 (faster to process) \pause
+      \item IP options: some required options are now optionals (faster to process) \pause
+      \item Notation:
+        \begin{itemize}
+          \item 8000:0000:0000:0000:0123:4567:89AB:CDEF \pause
+          \item 8000::0123:4567:89AB:CDEF \pause
+          \item ::192.168.2.3
+        \end{itemize}
+      \pause
+      \item Unicast address format:
+      \begin{figure}
+        \centering
+        \begin{tabular}{l|c|c|c}
+          bits & 48 (or more) & 16 (or fewer) & 64 \\ \hline
+          field & routing prefix & subnet id & interface identifier \\
+        \end{tabular}
+        \caption{Unicast IPv6 address format}
+        \label{fig:uni-ipv6-address}
+      \end{figure}
+    \end{itemize}
+  \end{frame}
+
+
