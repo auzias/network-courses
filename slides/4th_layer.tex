@@ -1,0 +1,72 @@
+\section{Transport}
+  \begin{frame}
+    \frametitle{Aims}
+      \begin{itemize}
+        \item Interface session layer,\pause
+        \item Reliability end-to-end communication,\pause
+        \item Order and reassemble received packets,\pause
+        \item Flow control,\pause
+        \item Congestion avoidance,\pause
+        \item Multiplexing
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Application identification}
+    \begin{block}{Socket address}
+      \begin{enumerate}
+        \item Node identification is made by IP address,\pause
+        \item Application identification is made by node identification..\pause
+        \item .. and a port. Number between 0 and 65535. (1-1024: root privilege) \pause
+        \item \begin{center} ip.ad.dr.ess:port \end{center}
+      \end{enumerate}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \begin{figure}
+      \centering
+      \begin{tabular}{l|c}
+        Port & Protocol \\ \hline
+        21 & FTP \\ \hline
+        22 & SSH \\ \hline
+        23 & Telnet \\ \hline
+        25 & SMTP \\ \hline
+        465 & SMTPS \\ \hline
+        80 & HTTP \\ \hline
+        443 & HTTPS \\ \hline
+        3128 - 8080 & Web Proxy \\ \hline
+        9418 & git \\ \hline
+      \end{tabular}
+      \caption{Default port for well known protocol}
+      \label{fig:def-port}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Socket Primitives (TCP)}
+    \begin{figure}
+      \centering
+      \resizebox{10cm}{!} {
+        \begin{tabular}{r|l|l}
+          Order & Primitive & Meaning \\ \hline
+          1     & SOCKET    & Creates a new communication endpoint \\ \hline
+          2     & BIND      & Links local IP address to the socket \\ \hline
+          3     & LISTEN    & Signs up for incoming connections \\ \hline
+          4     & ACCEPT    & Blocking call till a connection attempt occurs \\ \hline
+          -     & CONNECT   & \textbf{Tries} to connect to another communication endpoint \\ \hline
+          -     & SEND      & Sends data through the established connection \\ \hline
+          -     & RECEIVE   & Receives data through the established connection \\ \hline
+          last  & CLOSE     & Releases the connection \\ \hline
+        \end{tabular}
+      }
+      \caption{UDP and TCP primitives}
+      \label{fig:primitives}
+    \end{figure}
+    A socket does not have an IP address until it is bound, just an allocation in the transport entity. A server must listen before any client is able to connect.
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{}
+    %TODO: Frame, Packet, PDU, Datagram, Fragment, + header
+  \end{frame}
