@@ -196,7 +196,6 @@ For security reasons, the administrator of a machine disable the ping response. 
 \subsection{CSMA/CA}
 What does this acronym stand for? What and how is it used for? Is there any differences for the CSMA/CA between half and full duplex medium?
 
-%\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%      Layer 3       %%
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,8 +281,47 @@ The following networks are in a routing-table. Is it possible to combine routes?
   \caption{Routing table example}
   \label{fig:rting-tbl}
 \end{figure}
-
 What is the important information that is missing to route?
+\subsection{Routing}
+\subsubsection{New route}
+A router just got a new IP address: 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21, 57.6.120.0/21. If the routes uses the same NIC, can they be summarized?%57.6.96.0/19
+\subsubsection{New network}
+A router has a route for the range 29.18.0.0 to 29.18.128.255 into the route 29.18.0.0/17. A new 1024-addresses network, from 29.18.60.0 to 29.18.63.255, got advertise on a new interface of the router. Should the CIDR be spread out?%Nope, the new route is 29.18.0.0/22, if a packet comes for this network, the submask is bigger than the 29.18.0.0/17, so the better match will be for the new route.
+\subsubsection{Next hop?}
+A router has the routing table:
+  \begin{figure}[h]
+  \centering
+    \begin{tabular}{ll}
+      \textbf{Address/mask} & Next hop \\ \hline
+      135.46.56.0/22        & Iface 0  \\
+      135.46.60.0/22        & Iface 1  \\
+      192.53.40.0/23        & Router 1 \\
+      0.0.0.0               & Router 2 \\ \hline
+    \end{tabular}
+  \caption{Routing table}
+  \end{figure}
+What will the router do with packets being destined to:
+\begin{itemize}
+  \item 135.46.63.10  %iface1
+  \item 135.46.57.14  %iface0
+  \item 135.46.52.2   %router 2
+  \item 192.53.40.7   %router 1
+  \item 192.53.56.7   %router 2
+\end{itemize}
+\subsubsection{Two or one router?}
+Lot of firm uses two routers in case of one crashes. Is the NAT-ing possible?
 
+\subsection{IPv6}
+If 1 million IPv6 addresses are allocated at each picosecond, how long does it take to allocate the last one (assume that there are no special IPv6)? %3.8*10^38 addresses allocated at 10^18 every second, it will take 10^13 years
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%      Layer 4       %%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Transport layer}
+\subsection{Is UDP useless?}
+As both are not reliable, why can't users send IP packet instead of UDP ?
+
+\subsection{UDP and TCP}
+Why don't they use PID instead of (random) port to access to a socket?
 
 \end{document}
