@@ -14,12 +14,12 @@
   \begin{frame}
     \frametitle{Application identification}
     \begin{block}{Socket address}
-      \begin{enumerate}
+      \begin{itemize}
         \item Node identification is made by IP address,\pause
         \item Application identification is made by node identification..\pause
         \item .. and a port. Number between 0 and 65535. (1-1024: root privilege) \pause
         \item \begin{center} ip.ad.dr.ess:port \end{center}
-      \end{enumerate}
+      \end{itemize}
     \end{block}
   \end{frame}
 
@@ -44,6 +44,26 @@
   \end{frame}
 
   \begin{frame}
+    \frametitle{TCP header}
+    \begin{figure}[p]
+        \centering
+        \includegraphics[height=6cm]{./imgs/tcp-hdr.png}
+        \caption{\color{blue}\href{http://nmap.org/book/tcpip-ref.html}{nmap.org: TCP header}}
+      \label{fig:tcp-header}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{UDP header}
+    \begin{figure}[p]
+        \centering
+        \includegraphics[height=3.5cm]{./imgs/udp-hdr.png}
+        \caption{\color{blue}\href{http://nmap.org/book/tcpip-ref.html}{nmap.org: UDP header}}
+      \label{fig:udp-header}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}
     \frametitle{Socket Primitives (TCP)}
     \begin{figure}
       \centering
@@ -60,13 +80,20 @@
           last  & CLOSE     & Releases the connection \\ \hline
         \end{tabular}
       }
-      \caption{UDP and TCP primitives}
+      \caption{TCP primitives}
       \label{fig:primitives}
     \end{figure}
     A socket does not have an IP address until it is bound, just an allocation in the transport entity. A server must listen before any client is able to connect.
   \end{frame}
 
   \begin{frame}
-    \frametitle{}
+    \frametitle{What are theses?}
+      \begin{itemize}
+        \item \textbf{Frame}: Physical layer representation
+        \item \textbf{Datagram}: UDP\footnote{User \textbf{Datagram} Protocol} or IP packet (IP datagram, UDP datagram)
+        \item \textbf{Segment}: TCP data unit
+        \item \textbf{PDU}: Protocol Data Unit, generic term.
+        \item \textbf{Fragment}: Any data unit \textbf{fragmented}
+      \end{itemize}
     %TODO: Frame, Packet, PDU, Datagram, Fragment, + header
   \end{frame}
