@@ -5,6 +5,12 @@
 
 %\usepackage{pgfpages}\pgfpagesuselayout{4 on 1}[a4paper, landscape, border shrink=5mm]
 
+%gets rid of bottom navigation bars
+\setbeamertemplate{footline}[page number]{}
+
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
 \usepackage[utf8]{inputenc}
 \usepackage{graphics}
 \usepackage{graphicx}
@@ -29,7 +35,7 @@
 
 \AtBeginSection[]  % The commands within the following {} will be executed at the start of each section.
 {
-\begin{frame} % Within each "frame" there will be one or more "slides."  
+\begin{frame} % Within each "frame" there will be one or more "slides."
 \frametitle{Presentation Outline} % This is the title of the outline.
 \tableofcontents[currentsection]  % This will display the table of contents and highlight the current section.
 \end{frame}
@@ -131,4 +137,3 @@
 \end{frame}
 
 \end{document}
-
