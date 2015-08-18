@@ -2,11 +2,11 @@
   \begin{frame}
     \frametitle{Aims}
       \begin{itemize}
-        \item Interface session layer,\pause
-        \item Reliability end-to-end communication,\pause
-        \item Order and reassemble received packets,\pause
-        \item Flow control,\pause
-        \item Congestion avoidance,\pause
+        \item Interface session layer,
+        \item Reliability end-to-end communication,
+        \item Order and reassemble received packets (if needed),
+        \item Flow control,
+        \item Congestion avoidance (if supported by protocol),
         \item Multiplexing
       \end{itemize}
   \end{frame}
@@ -15,9 +15,9 @@
     \frametitle{Application identification}
     \begin{block}{Socket address}
       \begin{itemize}
-        \item Node identification is made by IP address,\pause
-        \item Application identification is made by node identification..\pause
-        \item .. and a port. Number between 0 and 65535. (1-1024: root privilege) \pause
+        \item Node identification is made by IP address,
+        \item Application identification is made by node identification..
+        \item .. and a port. Number between 0 and 65535. (1-1024: root privilege)
         \item \begin{center} ip.ad.dr.ess:port \end{center}
       \end{itemize}
     \end{block}
@@ -35,7 +35,7 @@
         465 & SMTPS \\ \hline
         80 & HTTP \\ \hline
         443 & HTTPS \\ \hline
-        3128 - 8080 & Web Proxy \\ \hline
+        3128, 8080 & Web Proxy \\ \hline
         9418 & git \\ \hline
       \end{tabular}
       \caption{Default port for well known protocol}
