@@ -429,9 +429,10 @@
 	\begin{block}{Route}
 	  \begin{itemize}
 	    \item Destination
-	    \item Gateway
+	    \item Gateway (next hop)
 	    \item Masks
 	    \item Metric
+	    \item Interface
 	  \end{itemize}
         \end{block}
 
@@ -453,7 +454,8 @@
     \end{figure}
     \begin{block}{0.0.0.0 ?}
       \begin{itemize}
-        \item Default address
+        \item Default destination
+        \item Default (sub)network(s)
         \item Default route
         \item Default gateway
       \end{itemize}
@@ -527,8 +529,8 @@
     \frametitle{Routing Protocol}
       \begin{enumerate}
         \item Router getting online broadcasts Request message
-        \item RIP Router send broadcasts Response message with their routing table
-        \item When Update timers (from other routers) expire routing table\footnote{not always all the routing table} is sent again
+        \item RIP Routers send \textbf{broadcasts} Response messages with their routing table
+        \item When Update timers (from other routers) expire, its routing table\footnote{not always all the routing table} is sent again
         \item When Invalid timer expires, the metric of the route is set to 16 (unreachable)
         \item When Flush timer expires, the 16-metric routes are removed from the routing table
         \item When a new router (or new metric) is sent, a Hold-down timer is started to stabilize the network.
