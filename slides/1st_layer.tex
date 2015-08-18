@@ -2,20 +2,20 @@
   \begin{frame}
     \frametitle{Aims}
       \begin{itemize}
-        \item Interface data link layer,\pause
-        \item (De)Encode,\pause
+        \item Interface data link layer,
+        \item (De)Encode,
         \item Transmit: 1 after 0 (after 0 or 1, after 0... or 1)
       \end{itemize}
   \end{frame}
   \begin{frame}
     \frametitle{Hardware medium}
       \begin{itemize}
-        \item IEEE 802.3 (a.k.a. Ethernet): $<$100Gbit/s \pause
-        \item IEEE 802.11 (a.k.a. Wi-Fi): $<$50 Mbit/s (802.11ad goes up to 6.75 Gbit/s) \pause
-        \item IEEE 802.15.1 (a.k.a. Bluetooth): $<$1 Mbit/s \pause
-        \item IEEE 802.15.4 (a.k.a. ZigBee): $<$250 kbit/s \pause
-        \item IEEE 802.16 (a.k.a. Wi-Max): $<$40 Mbit/s \pause
-        \item IEEE 1394 (a.k.a. Firewire): $<$3200 Mbit/s \pause
+        \item IEEE 802.3 (a.k.a. Ethernet): $<$100Gbit/s
+        \item IEEE 802.11 (a.k.a. Wi-Fi): $<$50 Mbit/s (802.11ad goes up to 6.75 Gbit/s)
+        \item IEEE 802.15.1 (a.k.a. Bluetooth): $<$1 Mbit/s
+        \item IEEE 802.15.4 (a.k.a. ZigBee): $<$250 kbit/s
+        \item IEEE 802.16 (a.k.a. Wi-Max): $<$40 Mbit/s
+        \item IEEE 1394 (a.k.a. Firewire): $<$3200 Mbit/s
         \item USB, serial port such as RS-232...
       \end{itemize}
   \end{frame}
@@ -67,10 +67,10 @@
   \begin{frame}
     \frametitle{Encoding}
       \begin{itemize}
-        \item \textbf{MLT3 (Multi-Level Transmit):} state change for 1s over 3 levels, stay in the same state for 0s \pause
-        \item \textbf{AMI (Alternate Mark Inversion):} state 0 for 0s, state +/-1 for 1s \pause
-        \item \textbf{Manchester:} voltage transition (rising/falling edge mean 1/0) \pause
-        \item \textbf{BMC (Biphase Mark Code):} change its state for 1s, stay on the same state for 0s \pause
+        \item \textbf{MLT3 (Multi-Level Transmit):} state change for 1s over 3 levels, stay in the same state for 0s
+        \item \textbf{AMI (Alternate Mark Inversion):} state 0 for 0s, state +/-1 for 1s
+        \item \textbf{Manchester:} voltage transition (rising/falling edge mean 1/0)
+        \item \textbf{BMC (Biphase Mark Code):} change its state for 1s, stay on the same state for 0s
         \item and so on...
       \end{itemize}
   \end{frame}
@@ -122,19 +122,19 @@
   \begin{frame}
     \frametitle{Error detection}
       \begin{itemize}
-        \item Repetition (hum...) \pause
-        \item Parity (XOR) \pause
-        \item Checksum \pause
-        \item CRC (Cyclic redundancy check): with a polynomial divison \pause
-        \item Hash \pause
+        \item Repetition (hum...)
+        \item Parity (XOR)
+        \item Checksum
+        \item CRC (Cyclic redundancy check): with a polynomial divison
+        \item Hash
         \item and so on...
       \end{itemize}
   \end{frame}
   \begin{frame}
     \frametitle{Error correcting}
       \begin{itemize}
-        \item Repetition (again) \pause
-        \item Hamming \pause
+        \item Repetition (again)
+        \item Hamming
         \item MDPC (Multidimensional parity-check code)
       \end{itemize}
   \end{frame}
