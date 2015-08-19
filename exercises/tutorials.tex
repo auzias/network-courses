@@ -21,24 +21,24 @@
 
 \section{Introduction}
 \subsection{Classification}
-Give a concrete example of each of the following kinds of networks (name some devices):
+Give a concrete example of each of the following kinds of networks (name some entities):
   \begin{enumerate}
-    \item BAN,
-    \item PAN,
-    \item LAN,
-    \item WAN.
+    \item BAN,  % Heart-monitoring, arterial pressure sensor, insulin pump, connected glass, bluetooth headset
+    \item PAN,  % Smartphone, connected keys sensor
+    \item LAN,  % Printer, local IP camera, laptop
+    \item WAN.  % Web server, routers
   \end{enumerate}
 
 \subsection{Topologies}
 Give a concrete example of each of the following network topologies:
   \begin{enumerate}
-    \item Bus,
-    \item Star,
-    \item Fully connected.
+    \item Bus,             % Old network using coaxial cable
+    \item Star,            % Small network using a switch or a computer with several NIC
+    \item Fully connected. % A small ad-hoc Wi-Fi
   \end{enumerate}
 
 \subsection{TCP connection}
-According to TCP (\color{blue}\href{http://tools.ietf.org/html/rfc761}{RFC761 (January 1980)}) \color{black}, what are the sequences used in order to establish a connection between two hosts?
+According to TCP (\color{blue}\href{http://tools.ietf.org/html/rfc761}{RFC761 (January 1980)})\color{black}, what are the sequences used in order to establish a connection between two hosts?
 
 \subsection{TCP or UDP?}
 \subsubsection{Sensors}
@@ -54,7 +54,7 @@ Does HTTP (\color{blue}\href{http://tools.ietf.org/html/rfc2616}{RFC2616 (June 1
 \subsubsection{Is FTP secure?}
 According to the file \color{blue}\href{http://teaching.auzias.net/db/ftp-connect.pcap}{ftp-connect.pcap} \color{black} is FTP secure? What could you do to use it more securely?
 \subsubsection{FTP and TCP}
-According to the file \color{blue}\href{http://teaching.auzias.net/db/ftp-disconnect.pcap}{ftp-disconnect.pcap} \color{black} does FTP respect the TCP protocol to close a connection?
+According to the file \color{blue}\href{http://teaching.auzias.net/db/ftp-disconnect.pcap}{ftp-disconnect.pcap} \color{black}, does FTP respect the TCP protocol to close a connection?
 
 \subsection{DNS}
 \subsubsection{Some news}
@@ -93,18 +93,18 @@ What are the layer-1 goals?
 \subsubsection{Name it}
 What is the common (\emph{commercial}) name of:
   \begin{enumerate}
-    \item IEEE 802.11
-    \item IEEE 802.15.1
-    \item IEEE 802.15.4
+    \item IEEE 802.11   % Wi-Fi
+    \item IEEE 802.15.1 % Bluetooth
+    \item IEEE 802.15.4 % ZigBee
   \end{enumerate}
-What is IEEE 802.15 related to? What does WPAN stand for?
+What is IEEE 802.15 related to? What does WPAN stand for? % Wireless Personal Area Network
 
 \subsection{Encoding, encrypting, decoding}
 It is important to know what are the differences between encoding and encryption. The following questions are related to theses subjects.
 \subsubsection{Encrypt?}
-What are the differences between encoding and encryption?\\
-What are the two main kinds of encryption? Their advantages?\\
-Name three well known cryptographic methods and three well known encoding methods.
+What are the differences between encoding and encryption?\\     % Encryption: key required. Encoding: data format translation
+What are the two main kinds of encryption? Their advantages?\\  % Symmetric and asymmetric
+Name three well known cryptographic methods and three well known encoding methods. % Rivest-Shamir-Adleman (RSA), Data Encryption Standard (DES), Advanced Encryption Standard (AES) ; base64, utf8, binary, ASCII, or any other below...
 
 \subsubsection{Encode it}
 The string \verb$"Zp"$ (which does not mean anything but has a nice binary value) is, according to ASCII, \verb$0x5a70$. Encode it using:
@@ -132,21 +132,21 @@ What are the ASCII characters of theses images:
 
 \subsection{For\emph{Oh}For error}
 \subsubsection{Calculate it}
-What would be the output of the binary: \verb$0b0011 0000 1110 1001$ using the error detection methods:
+What would be the output of the binary: \verb$0b0011 0000 0100 0001$ using the error detection methods:
   \begin{enumerate}
-    \item Repetition (2)
-    \item Parity (odd)
-    \item Parity (even)
-    \item Checksum (over 4 bit)
-    \item MD5 hash
+    \item Repetition (2)         % 0011 0000 0100 0001 [0011 0000 0100 0001]
+    \item Parity (odd)           % 0011 0000 0100 0001 [1]
+    \item Parity (even)          % 0011 0000 0100 0001 [0]
+    \item Checksum (over 4 bit)  % 0011 0000 0100 0001 [1000]
+    \item MD5 hash               % 0b0011 0000 = 0x30 = '0', 0b0100 0001 = 0x41 = 'A'. echo -n "0A"|md5sum [3ee74005e9165bac449dcbe722951ce0]
   \end{enumerate}
 
 \subsubsection{Validate it}
 Are theses received data correct? NB: detection values are in square brackets.
   \begin{enumerate}
-    \item Using repetition (2), was received: \verb$0b0011 0011 0000 0000 1110 1001 1001 1001$
-    \item Using parity (odd), was received: \verb$0b1011[1] 1010[0] 1100[1] 0111[1]$
-    \item Using parity (even), was received: \verb$0b1011[1] 1010[0] 1100[1] 0111[1]$
+    \item Using repetition (2), was received: \verb$0b0011 1110 1001 [0011 1110 1001]$
+    \item Using parity (odd), was received:  \verb$0b1011 1010 1100 0111 [1]$
+    \item Using parity (even), was received: \verb$0b1011 1010 1100 0111 [1]$
     \item Using checksum (over 4 bit), was received: \verb$0b0011 0111 0010 0010 1110 1001 1101 1001 [1011]$
     \item Using MD5, the string was received (without the quotes): \verb$"that's way too long..."$ the md5 sum: \verb$[3be37cad170213a8ad936c0640e3238b]$
   \end{enumerate}
@@ -178,21 +178,25 @@ What are the main objectives of the data layer?
 \subsubsection{Composition}
 What are the sublayer of the data layer?
 \subsection{Ethernet packet decoding}
-According to the packet \ref{fig:arp_req_ex}, which machine tried to ping which machine? Give MAC and IP address of both machines.
+According to the packet on the Figure \ref{fig:arp_req_ex}, which machine tried to ping which machine? Give MAC and IP address of both machines.
+%MAC address destination: ff:ff:ff:ff:ff:ff (ping a broadcast!)
+%MAC address source     : 00:1b:11:09:aa:88
+%IP address destination:  255.255.255.255 (ping a broadcast!)
+%IP address source     :  aa.88.c0.a8 (170.136.192.168)
   \begin{figure}[h]
   \centering
   \resizebox{16cm}{!} {
     \begin{tabular}{lcccccccccccccccc}
-      \textbf{0000} & ff & ff & ff & ff & ff & ff & 00 & 1b & 11 & 09 & aa & 88 & 08 & 06 & 00 & 01 \\
-      \textbf{0010} & 08 & 00 & 06 & 04 & 00 & 01 & 00 & 1b & 11 & 09 & aa & 88 & c0 & a8 & 00 & 3b \\
-      \textbf{0020} & 00 & 00 & 00 & 00 & 00 & 00 & c0 & a8 & 00 & 3c \\
+      \textbf{0000} & ff & ff & ff & ff & ff & ff & 00 & 1b     & 11 & 09 & aa & 88 & 08 & 00 & 00 & 01 \\
+      \textbf{0010} & 08 & 00 & 06 & 04 & 00 & 01 & 00 & 1b     & 11 & 09 & aa & 88 & c0 & a8 & ff & ff \\
+      \textbf{0020} & ff & ff & 00 & 00 & 00 & 00 & c0 & a8     & 00 & 3c \\
     \end{tabular}
   }
   \caption{Layer 2 packet}
   \label{fig:arp_req_ex}
   \end{figure}
 \subsection{Ping}
-For security reasons, the administrator of a machine disable the ping response. By knowing its MAC address, how can you assure that this host is up or not (assuming no other security rules on the machine)?
+For security reasons, the administrator of a machine disabled the ping response. How can you assure that this host is up or not (assuming no other security rules on the machine)?
 \subsection{CSMA/CA}
 What does this acronym stand for? What and how is it used for? Is there any differences for the CSMA/CA between half and full duplex medium?
 
