@@ -37,11 +37,11 @@ What do theses commands display?
 \end{verbatim}
 
 \subsubsection{What's your number?}
-As explained before, humans can easily remember name such as \color{blue}\href{https://news.ycombinator.com}{news.ycombinator.com}\color{black} or \color{blue}\href{http://root-me.org}{root-me.org}\color{black} but it is not as easy to remind \verb"198.41.191.47" or \verb"212.129.28.16". We need a way to \emph{translate} a domain name into an IP address. This is role of DNS\footnote{DNS: Domain Name Server, if you needed to read this footnote keep in mind that you should remember it from now on}. You can query DNS using \verb"nslookup".
+As explained before, humans can easily remember names such as \color{blue}\href{https://news.ycombinator.com}{news.ycombinator.com}\color{black} or \color{blue}\href{http://root-me.org}{root-me.org}\color{black} but it is not as easy to remember \verb"198.41.191.47" or \verb"212.129.28.16". We need a way to \emph{translate} a domain name into an IP address. This is role of DNS\footnote{DNS: Domain Name Server, if you needed to read this footnote keep in mind that you should remember it from now on}. You can query DNS using \verb"nslookup".
 
 \subsubsection{Wait! What direction?}
-The (IP) address is of the website you want to visit is now known. The next step is to know how to \emph{GET}\footnote{that's not a HTTP verb, but a word play!} there. Try to trace the route using... \verb"traceroute" (or \verb"tracepath") to see packets' path. Do you know any town on the path from where you are to \verb"www.ethicalhacker.net" server?
-Note that sometimes, for security reasons, IMCP protocol is blocked. If this is the case you can use an option to use TCP SYN for probes.
+The (IP) address of the website you want to visit is now known. The next step is to know how to \emph{GET}\footnote{that's not a HTTP verb, but a word play!} there. Try to trace the route using... \verb"traceroute" (or \verb"tracepath") to see packets' path. Do you know any town on the path from where you are to \verb"www.ethicalhacker.net" server?
+Note that sometimes, for security reasons, ICMP protocol is blocked. If this is the case you can use an option to use TCP SYN for probes.
 How does \verb"traceroute" work ?
 
 \subsubsection{Go GET it!}
@@ -61,27 +61,27 @@ Some methods allow web-master to secure some part of the website. Then the websi
   \item user: test
   \item pass: p4ssw0rd
 \end{itemize}
-Use \verb"wireshark" and verify if you had captured the user:password encrypted or not. \color{blue}\href{http://tools.ietf.org/html/rfc2617}{RFC 2617}\color{black} could be handful.
+Use \verb"wireshark" and verify if you had captured the user:password encrypted or not. \color{blue}\href{http://tools.ietf.org/html/rfc2617}{RFC 2617}\color{black} could be helpful.
 
 \section{Chat}
 \subsection{netcat}
 \verb"netcat (or ncat)" is a "network swiss army knife". By checking its man page how can you use it as a chat server/client (two nodes only).
 \subsubsection{TCP}
-Use the mode TCP of \verb"netcat" and try it. Can \verb"netstat" could, somehow, be helpful for anything while waiting for connection? Can \verb"telnet" be used to chat?
+Use the mode TCP of \verb"netcat" and try it. Can \verb"netstat", somehow, be helpful for anything while waiting for connection? Can \verb"telnet" be used to chat?
 \subsubsection{UDP}\label{chat:udp}
-Use the mode UDP of \verb"netcat" and try it. Explain a situation within the server could not receive every packet.
+Use the mode UDP of \verb"netcat" and try it. Explain a situation where the server could not receive every packet.
 \newline
 More example of netcat:\color{blue}\href{http://www.brianhaddock.com/2013/8-great-netcat-nc-unix-commands}{brianhaddock.com}\color{black}
 
 \subsection{Create your own client}
-In the two next exercise you can use \verb"netcat" to verify, whether or not, your client are working.
+In the next two exercises you can use \verb"netcat" to verify, whether or not, your client is working.
 \subsubsection{TCP}
 Create a TCP client that send packet to a specific port on \verb"localhost". (The class \verb"Socket" should be useful...)
 \subsubsection{UDP}
 Try to produce the situation explained in \ref{chat:udp} by implementing it using Java language and flood a specific port on \verb"localhost". (The classes \verb"InetAddress" and \verb"DatagramPacket" should be useful...)
 
 \subsection{Create your own server}
-In the two next exercise you can use your previous client to verify, whether or not, your server are working.
+In the two next exercise you can use your previous client to verify, whether or not, your server is working.
 \subsubsection{TCP}
 Implement in Java a TCP server that connects at the first attempt of connection and displays it on the screen. Next step is to \emph{echo} it (send it back).
 \subsubsection{UDP}
