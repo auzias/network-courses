@@ -1,0 +1,6 @@
+{
+  "project": "Test",
+  "root": "./slides/all.tex",
+  "program": "pdflatex",
+  "output": ".texlicious"
+}
