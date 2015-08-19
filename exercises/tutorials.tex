@@ -215,11 +215,11 @@ What does this acronym stand for? What and how is it used for? Is there any diff
 \subsubsection{Adressing}
 \begin{enumerate}
   \item How many bits does an IP address have?
-  \item What are the two part of an IP address?
+  \item What are the two parts of an IP address?
   \item How many bits is each part? What does determine it?
   \item How is a mask constituted?
-  \item How many addresses and nodes does theses mask allow: 31, 30, 24, 16, 8, 4?
-  \item What are the specification of network and broadcast addresses?
+  \item How many addresses and nodes does theses mask allow: /31, /30, /24, /16, /8, /4?
+  \item What are the specifications of network and broadcast addresses?
   \item What are the first and last \textbf{nodes} IP addresses of theses networks:
     \begin{itemize}
       \item 192.168.2.0/24
@@ -228,7 +228,7 @@ What does this acronym stand for? What and how is it used for? Is there any diff
       \item 10.0.1.0/31
       \item 10.0.2.0/30
     \end{itemize}
-  \item What are the classes of theses IP addresses?
+  \item Are theses IP addresses public or private?
     \begin{itemize}
       \item 1.2.3.4
       \item 192.168.2.35
@@ -250,22 +250,21 @@ Starting from the 192.168.0.0 IP address, calculate the subnet masks, subnetwork
   \item 60 hosts,
   \item 121 hosts.
 \end{itemize}
-Theses network are all on the same CIDR 192.168.0.0/24.
+All theses networks are on the same CIDR 192.168.0.0/24.
 
 \subsubsection{Inter-network}
 A inter-network is as follow:
 \begin{itemize}
-  \item With two routers (A and B) within the subnetwork having 10.0.0.0 has IP address.
-  \item Router A has a subnetwork n1, with 40 hosts, having 192.168.3.64 IP address.
-  \item Router A has a subnetwork n2, with 10 hosts, having 192.168.3.144 IP address.
-  \item Router B has a subnetwork n3, with 1500 hosts, having 176.16.0.0 IP address.
-  \item Router B has a subnetwork n4, with 30 hosts, having 176.31.25.224 IP address.
+  \item With two routers (A and B) within the subnetwork having 10.0.0.0      IP address.
+  \item Router A has a subnetwork n1, with 40 hosts,     having 192.168.3.64  IP address.
+  \item Router A has a subnetwork n2, with 10 hosts,     having 192.168.3.144 IP address.
+  \item Router B has a subnetwork n3, with 1500 hosts,   having 176.16.0.0    IP address.
+  \item Router B has a subnetwork n4, with 30 hosts,     having 176.31.25.224 IP address.
 \end{itemize}
-
 How many different subnetworks are in this network?\\
-How many NIC do the routers A and B have?\\
-Draw the schema of the network?\\
-Design, using the best subnet mask for each subnet (subnet masks, subnetwork IP address, first node IP address, last node IP address, broadcast address).
+How many NIC (at least) do the routers A and B have?\\
+Draw the schema of the network.\\
+Design the network, using the best subnet mask for each subnet (subnet masks, subnetwork IP address, first node IP address, last node IP address, broadcast address).
 
 \subsection{CIDR}
 \subsubsection{Subnetworks}
@@ -285,12 +284,13 @@ The following networks are in a routing-table. Is it possible to combine routes?
   \caption{Routing table example}
   \label{fig:rting-tbl}
 \end{figure}
-What is the important information that is missing to route?
+What is the important information that is missing to route? % The metric
 \subsection{Routing}
 \subsubsection{New route}
-A router just got a new IP address: 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21, 57.6.120.0/21. If the routes uses the same NIC, can they be summarized?%57.6.96.0/19
+A router just got an update with theses networks: 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21, 57.6.120.0/21. If the routes uses the same NIC, can they be summarized? %57.6.96.0/19
 \subsubsection{New network}
-A router has a route for the range 29.18.0.0 to 29.18.128.255 into the route 29.18.0.0/17. A new 1024-addresses network, from 29.18.60.0 to 29.18.63.255, got advertise on a new interface of the router. Should the CIDR be spread out?%Nope, the new route is 29.18.0.0/22, if a packet comes for this network, the submask is bigger than the 29.18.0.0/17, so the better match will be for the new route.
+A router has a route for the range 29.18.0.0 to 29.18.128.255 into the route 29.18.0.0/17. A new 1024-addresses network, from 29.18.60.0 to 29.18.63.255, got advertised on a new interface of the router. Should the CIDR be spread out? %Nope, the new route is 29.18.0.0/22, if a packet comes for this network, the submask is bigger than the 29.18.0.0/17, so the better match will be for the new route.
+
 \subsubsection{Next hop?}
 A router has the routing table:
   \begin{figure}[h]
@@ -313,7 +313,7 @@ What will the router do with packets being destined to:
   \item 192.53.56.7   %router 2
 \end{itemize}
 \subsubsection{Two or one router?}
-Lot of firm uses two routers in case of one crashes. Is the NAT-ing possible?
+Lot of firm use two routers in case of one crashes. Is the NAT-ing possible? % Assuming that the two routers have their own IP address: yes, and the packets must not be dispatched between the two routers.
 
 \subsection{IPv6}
 If 1 million IPv6 addresses are allocated at each picosecond, how long does it take to allocate the last one (assume that there are no special IPv6)? %3.8*10^38 addresses allocated at 10^18 every second, it will take 10^13 years
