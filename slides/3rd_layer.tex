@@ -611,6 +611,51 @@
     \end{itemize}
   \end{frame}
 
+
+  \begin{frame}
+    \frametitle{IPv4 vs IPv6}
+    \begin{figure}[t]
+      \centering
+      \includegraphics[height=5cm]{./imgs/ipv4-6_header.jpg}
+      \caption{IPv4 and IPv6 headers (www.cisco.com)}
+      \label{fig:ipv4-ipv6_header}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{IPv6 - Header}
+    \begin{itemize}
+      \item \textbf{Version (4 bits):} 0b0110
+      \item \textbf{Traffic class (8 bits):} 6-MSB for differentiated services\footnote{multimedia or http}, 2-LSB for ECN\footnote{Explicit Congestion Notification (RFC 3168)}
+      \item \textbf{Flow label (20 bits):} routers are supposed to use the same path for the same flow (thus, desination do not need to re-order packets)
+      \item \textbf{Payload length (16 bits):} packet length minus its header length
+  \end{itemize}
+  \end{frame}
+    \begin{frame}
+      \frametitle{IPv6 - Header}
+      \begin{itemize}
+          \item \textbf{Next header (8 bits):} specifies the transport layer protocol, also indicates (if any) extension header that follows.
+          \item \textbf{Hop limit (8 bits):} Hop count (discussion was to use a duration instead, but router implementations would be much more complex)
+    \end{itemize}
+    \begin{block}{Optional IPv6 headers offer the possibility to}
+        \begin{itemize}
+            \item specify the route of the datagram
+            \item include authentication data
+            \item include fragmentation parameters
+            \item and so on...
+        \end{itemize}
+    \end{block}
+  \end{frame}
+    \begin{frame}
+      \frametitle{IPv6 - Anecdotes}
+      \begin{itemize}
+        \item IPv6 address length could had been 8 bytes, or 20 bytes, or even variable
+        \item Hop count max value (255) is considered, by some, not enough
+        \item IPv4 checksum removed is as safe as removed brakes on a car
+        \item Different national laws on encryption disallow a real secure transport layer
+    \end{itemize}
+    \end{frame}
+
   \begin{frame}
     \frametitle{IPv6 adoption}
     \begin{figure}[t]
@@ -623,5 +668,4 @@
         \item \textbf{2014} Belgium: 28\%, USA and Germany: 11\%
         \item \textbf{2015} Belgium: 36\%, USA: 21\% and Germany: 18\%
     \end{itemize}
-
   \end{frame}
