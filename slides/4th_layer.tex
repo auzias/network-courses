@@ -3,7 +3,7 @@
     \frametitle{Aims}
       \begin{itemize}
         \item Interface session layer,
-        \item Reliability end-to-end communication,
+        \item Reliable end-to-end communication,
         \item Order and reassemble received packets (if needed),
         \item Flow control,
         \item Congestion avoidance (if supported by protocol),
@@ -86,11 +86,11 @@
       \caption{TCP primitives}
       \label{fig:primitives}
     \end{figure}
-    A socket does not have an IP address until it is bound, just an allocation in the transport entity. A server must listen before any client can be able to connect.
+    A socket does not have an IP address until it is bound, just an allocation in the transport entity. A server must listen before any client can connect.
   \end{frame}
 
   \begin{frame}
-    \frametitle{What are theses?}
+    \frametitle{What are these  ?}
       \begin{itemize}
         \item \textbf{Frame}: Physical layer representation
         \item \textbf{Datagram}: UDP\footnote{User \textbf{Datagram} Protocol} or IP packet (IP datagram, UDP datagram)
