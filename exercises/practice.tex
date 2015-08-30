@@ -14,36 +14,37 @@
 \author{Maël Auzias}
 \maketitle
 
-\tableofcontents
-\pagebreak
+%\tableofcontents
+%\pagebreak
 
 
 \section{HTTP example}
 \subsection{Who are you? Where are you?}
 What is your own IP address? What is your MAC address? What is your network mask? Do you have an IPv6 address?
-What do theses commands display?
+What do these commands display?
 \begin{verbatim}
 $ifconfig
 $curl ifconfig.me
 $netstat -at
 $nmap localhost
 $ping 3564020356.org
+$ping http://www.imdb.com/title/tt4158110/
 \end{verbatim}
 What are the differences between the \verb"curl" command and if you go to \color{blue}\href{http://ifconfig.me}{http://ifconfig.me}\color{black} with your web browser?
 
 \subsubsection{How to get out?}
 Before we can access the Internet we need to know who/what is the gateway. What is a gateway?
-What do theses commands display?
+What do these commands display?
 \begin{verbatim}
 #route -n
 #arp -a
 \end{verbatim}
 
 \subsubsection{What's your number?}
-As explained before, humans can easily remember names such as \color{blue}\href{https://news.ycombinator.com}{news.ycombinator.com}\color{black} or \color{blue}\href{http://root-me.org}{root-me.org}\color{black} but it is not as easy to remember \verb"198.41.191.47" or \verb"212.129.28.16". We need a way to \emph{translate} a domain name into an IP address. This is role of DNS\footnote{DNS: Domain Name Server, if you needed to read this footnote keep in mind that you should remember it from now on}. You can query DNS using \verb"nslookup".
+As explained before, humans can easily remember names such as \color{blue}\href{https://news.ycombinator.com}{news.ycombinator.com}\color{black} or \color{blue}\href{http://root-me.org}{root-me.org}\color{black} but it is not as easy to remember \verb"198.41.191.47" or \verb"212.129.28.16". We need a way to \emph{translate} a domain name into an IP address. This is the role of DNS\footnote{DNS: Domain Name Server, if you needed to read this footnote keep in mind that you should remember it from now on}. You can query DNS using \verb"nslookup".
 
-\subsubsection{Wait! What direction?}
-The IP address of the website you want to visit is now known. The next step is to know how to get there. Try to trace the route using \verb"traceroute" (or \verb"tracepath") to see packets' path. Do you know any town on the path from where you are to \verb"www.ethicalhacker.net" server?
+\subsubsection{Wait! Which direction?}
+The IP address of the website you want to visit is now known. The next step is to know how to get there. Try to trace the route using \verb"traceroute" (or \verb"tracepath") to see the packets' path. Do you know any town on the path from where you are to \verb"www.ethicalhacker.net" server?
 Note that sometimes, for security reasons, ICMP protocol is blocked. If this is the case you can use an option to use TCP SYN for probes.
 How does \verb"traceroute" work ?
 
@@ -53,13 +54,13 @@ What does \verb"wget 149.154.167.119 80" do?
 \subsubsection{Capture it}
 Use \verb"wireshark" to capture:
 \begin{itemize}
-  \item a GET through HTTP (\color{blue}\href{http://selfoss.aditu.de/}{selfoss.aditu.de}\color{black} does not have valid HTTPS certificate).
+  \item a GET through HTTP (\color{blue}\href{http://selfoss.aditu.de/}{selfoss.aditu.de}\color{black} does not have a valid HTTPS certificate).
   \item a GET through HTTPS (\color{blue}\href{https://micahflee.com/}{micahflee.com}\color{black} force redirection to HTTPS).
 \end{itemize}
-What differences can you see? How can you explain theses differences?
+What differences can you see? How can you explain these differences?
 
 \subsubsection{"Security" \emph{without} HTTPS}
-Some methods allow web-master to secure some part of the website. Then the website requires a user and a password to enter. You can test on the webpage: http://teaching.auzias.net/http-auth/
+Some methods allow web-master to secure some part of the website. Then the website requires a user and a password to enter. You can test this on the webpage: http://teaching.auzias.net/http-auth/
 \begin{itemize}
   \item user: test
   \item pass: p4ssw0rd
@@ -77,16 +78,16 @@ Use the mode UDP of \verb"netcat" and try it. Explain a situation where the serv
 More example of netcat:\color{blue}\href{http://www.brianhaddock.com/2013/8-great-netcat-nc-unix-commands}{brianhaddock.com}\color{black}
 
 \subsection{Create your own client}
-In the next two exercises you can use \verb"netcat" to verify, whether or not, your client is working.
+In the next two exercises you can use \verb"netcat" to verify whether or not your client is working.
 \subsubsection{TCP}
 Create a TCP client that send packet to a specific port on \verb"localhost". (The class \verb"Socket" should be useful...)
 \subsubsection{UDP}
 Try to produce the situation explained in \ref{chat:udp} by implementing it using Java language and flood a specific port on \verb"localhost". (The classes \verb"InetAddress" and \verb"DatagramPacket" should be useful...)
 
 \subsection{Create your own server}
-In the two next exercise you can use your previous client to verify, whether or not, your server is working.
+In the two next exercise you can use your previous client to verify whether or not your server is working.
 \subsubsection{TCP}
-Implement in Java a TCP server that connects at the first attempt of connection and displays it on the screen. Next step is to \emph{echo} it (send it back).
+Implement in Java a TCP server that connects on the first connection attempt and displays it on the screen. Next step is to \emph{echo} it (send it back).
 \subsubsection{UDP}
 Implement in Java a UDP server that receives and displays it on the screen. Next step is to \emph{echo} it (send it back).
 
