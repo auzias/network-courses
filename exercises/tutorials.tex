@@ -277,7 +277,7 @@ The following networks are in a routing-table. Is it possible to combine routes?
       192.168.0.0   & 10.0.0.2 & 255.255.255.128 & E0 \\
       130.1.2.0     & 10.0.0.6 & 255.255.0.0     & E1 \\
       192.168.1.112 & 10.0.0.2 & 255.255.255.240 & E0 \\
-      192.168.3.0   & 10.0.0.2 & 255.255.248.0   & E0 \\
+      192.168.4.0   & 10.0.0.2 & 255.255.248.0   & E0 \\
       192.168.9.0   & 10.0.0.6 & 255.255.248.0   & E1 \\
     \end{tabular}
   }
@@ -288,7 +288,7 @@ The following networks are in a routing-table. Is it possible to combine routes?
 \subsubsection{New route}
 A router just got an update with these networks: 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21, 57.6.120.0/21. If the routes use the same NIC, can they be summarized? %57.6.96.0/19
 \subsubsection{New network}
-A router has a route for the range 29.18.0.0 to 29.18.128.255 into the route 29.18.0.0/17. A new 1024-addresses network, from 29.18.60.0 to 29.18.63.255, got advertised on a new interface of the router. Should the CIDR be spread out? %Nope, the new route is 29.18.0.0/22, if a packet comes for this network, the submask is bigger than the 29.18.0.0/17, so the better match will be for the new route.
+A router has a route for the range 29.18.0.0 to 29.18.128.255 into the route 29.18.0.0/16. A new 1024-addresses network, from 29.18.60.0 to 29.18.63.255, got advertised on a new interface of the router. Should the CIDR be spread out? %Nope, the new route is 29.18.0.0/22, if a packet comes for this network, the submask is bigger than the 29.18.0.0/16, so the better match will be for the new route.
 
 \subsubsection{Next hop?}
 A router has the routing table:
