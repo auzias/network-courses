@@ -7,14 +7,14 @@ Created for the engineering school [ENSIBS](http://www-ensibs.univ-ubs.fr/).
 ##Website
 [teaching.auzias.net](http://teaching.auzias.net)
 
-##TODO/Present
-- [ ] Slides
-- [ ] Tutorials
-- [ ] Training
+## TODO/Present
+- [ ] [Marionnet practice (fr)](http://www.marionnet.org/wiki/doku.php?id=travaux_pratiques)
+- [x] Slides
+- [x] Tutorials
+- [x] Training
 
 ##Compilation
-The .tex files are compiled using pdfTeX 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian)
-Here is the command you can use: `pdflatex 0-network-courses.tex && pdflatex 0-network-courses.tex && evince 0-network-courses.pdf`
+`auto-compile.sh` files are included in directories where files are to be compiled (*tex, *c). This script uses `inotify`, so each time you save the file the compilation occurs.
 
 ##Pictures
 The pictures are not mine. Please see the slides (either .pdf or .tex) to see where do they come from.
