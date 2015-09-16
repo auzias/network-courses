@@ -118,6 +118,7 @@ int main(int argc, char *argv[])
              outgoing[1] == 'x' &&
              outgoing[2] == 'i' &&
              outgoing[3] == 't'));
+    shutdown (socket_fd, SHUT_RDWR);
     close (socket_fd);
     return 0;
 }
