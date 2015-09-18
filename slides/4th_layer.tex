@@ -46,48 +46,51 @@
     \end{figure}
   \end{frame}
 
-  \begin{frame}
-    \frametitle{TCP header}
-    \begin{figure}[p]
-        \centering
-        \includegraphics[height=6cm]{./imgs/tcp-hdr.png}
-        \caption{\color{blue}\href{http://nmap.org/book/tcpip-ref.html}{nmap.org: TCP header}}
-      \label{fig:tcp-header}
-    \end{figure}
-  \end{frame}
 
-  \begin{frame}
-    \frametitle{UDP header}
-    \begin{figure}[p]
-        \centering
-        \includegraphics[height=3.5cm]{./imgs/udp-hdr.png}
-        \caption{\color{blue}\href{http://nmap.org/book/tcpip-ref.html}{nmap.org: UDP header}}
-      \label{fig:udp-header}
-    \end{figure}
-  \end{frame}
+    \begin{frame}
+      \frametitle{TCP header}
+      \begin{figure}[p]
+          \centering
+          \includegraphics[height=6cm]{./imgs/tcp-hdr.png}
+          \caption{\color{blue}\href{http://nmap.org/book/tcpip-ref.html}{nmap.org: TCP header}}
+        \label{fig:tcp-header}
+      \end{figure}
+    \end{frame}
 
-  \begin{frame}
-    \frametitle{Socket Primitives (TCP)}
-    \begin{figure}
-      \centering
-      \resizebox{10cm}{!} {
-        \begin{tabular}{r|l|l}
-          Order & Primitive & Meaning \\ \hline
-          1     & SOCKET    & Creates a new communication endpoint \\ \hline
-          2     & BIND      & Links local IP address to the socket \\ \hline
-          3     & LISTEN    & Signs up for incoming connections \\ \hline
-          4     & ACCEPT    & Blocking call till a connection attempt occurs \\ \hline
-          -     & CONNECT   & \textbf{Tries} to connect to another communication endpoint \\ \hline
-          -     & SEND      & Sends data through the established connection \\ \hline
-          -     & RECEIVE   & Receives data through the established connection \\ \hline
-          last  & CLOSE     & Releases the connection \\ \hline
-        \end{tabular}
-      }
-      \caption{TCP primitives}
-      \label{fig:primitives}
-    \end{figure}
-    A socket does not have an IP address until it is bound, just an allocation in the transport entity. A server must listen before any client can connect.
-  \end{frame}
+    \begin{frame}
+      \frametitle{UDP header}
+      \begin{figure}[p]
+          \centering
+          \includegraphics[height=3.5cm]{./imgs/udp-hdr.png}
+          \caption{\color{blue}\href{http://nmap.org/book/tcpip-ref.html}{nmap.org: UDP header}}
+        \label{fig:udp-header}
+      \end{figure}
+    \end{frame}
+
+
+      \begin{frame}
+        \frametitle{Socket Primitives (TCP)}
+        \begin{figure}
+          \centering
+          \resizebox{10cm}{!} {
+            \begin{tabular}{r|l|l}
+              Order & Primitive & Meaning \\ \hline
+              1     & SOCKET    & Creates a new communication endpoint \\ \hline
+              2     & BIND      & Links local IP address to the socket (for server) \\ \hline
+              3     & LISTEN    & Signs up for incoming connections \\ \hline
+              4     & ACCEPT    & Blocking call till a connection attempt occurs \\ \hline
+              -     & CONNECT   & \textbf{Tries} to connect to another communication endpoint \\ \hline
+              -     & SEND      & Sends data through the established connection \\ \hline
+              -     & RECEIVE   & Receives data through the established connection \\ \hline
+              last  & CLOSE     & Releases the connection (do not mistake shutdown and close.) \\ \hline
+            \end{tabular}
+          }
+          \caption{TCP primitives}
+          \label{fig:primitives}
+        \end{figure}
+        A socket does not have an IP address until it is bound, just an allocation in the transport entity. A server must listen before any client can connect. \\
+        $close()$ a socket does not send the closing stream three handshake, $shutdown()$ does. $fork()$ is needed, $poll()$ and $select()$ can be used too.
+      \end{frame}
 
   \begin{frame}
     \frametitle{What are these  ?}
