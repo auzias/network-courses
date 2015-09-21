@@ -42,12 +42,12 @@ Last name:
 Use Table \ref{tab:design} on the fourth page.
 
 \section{OSI model (2 pts)}
-	Give the name and a short overview of the four first layers:
+	Give the name and a short overview of the four first layers:%cf slides
 \pagebreak
 
 \section{Routing decision (2 pts)}
 	\subsection{Definitions}
-		What are the definitions of: \emph{router}, \emph{routing algorithm} and \emph{forwarding}? (You can make up these three definitions in one sentence).
+		What are the definitions of: \emph{router}, \emph{routing algorithm} and \emph{forwarding}? (You can make up these three definitions in one sentence).%cf slides
 \vspace{3cm}
 
 	\subsection{Next NIC?}
@@ -69,23 +69,23 @@ Use Table \ref{tab:design} on the fourth page.
 
 		According to the routing Table \ref{tab:routing}:
 		\begin{itemize}
-			\item What are the (optional) missing details ?
+			\item What are the (optional) missing details ?%optional: gateway (the interface is enough though), not optional: metric. Flags was also accepted as optional.
 			\item Where will be forwarded packet with destinations:
 			\begin{itemize}
-				\item 198.41.191.47?
-				\item 192.168.4.3?
-				\item 192.168.1.1?
-				\item 80.10.201.0?
-				\item 80.10.210.0?
-				\item 10.128.0.4?
-				\item 212.27.61.1?
+				\item 198.41.191.47?	%R0
+				\item 192.168.4.3?		%R0
+				\item 192.168.1.1?		%R0 !
+				\item 80.10.201.0?		%R3
+				\item 80.10.210.0?		%R0
+				\item 10.128.0.4?		%R1
+				\item 212.27.61.1?		%R2
 			\end{itemize}
-			\item Is there routes than can be summarized ? If yes, which one(s) into which "super-network"?
+			\item Is there routes than can be summarized ? If yes, which one(s) into which "super-network"? % No ! There isn't any. If you summarized 192.168.0.0/24 and 192.168.5.0/25 then 192.168.1.0/23 (both .1.0/24 and .2.0/24) will be then be forwarded to this summarized route and not R0 anymore!
 		\end{itemize}
 
 \pagebreak
 \section{What layer is it ? (2 pts)}
-	Complete the table \ref{tab:protocol} with (include the default port, if any, in brackets -see HTTP example-): \sout{HTTP}, HTTPS, TCP, UDP, MAC, IP, telnet, ssh, ftp, IEEE 802.11, IEEE 802.15.2, DNS, SIP, TLS, ICMP, IS-IS, RIP.
+	Complete the table \ref{tab:protocol} with (include the default port, if any, in brackets -see HTTP example-): \sout{HTTP}, HTTPS, TCP, UDP, MAC, IP, telnet, ssh, ftp, IEEE 802.11, IEEE 802.15.2, DNS, SIP, TLS, ICMP, IS-IS, RIP. %Cf the RFC (or wikipedia). IS-IS is a routing protocol, so is RIP, then it's layer 3.
 	\subsection{Next NIC?}
 		\renewcommand{\arraystretch}{1.5}
 			\begin{table}[h]
@@ -93,7 +93,7 @@ Use Table \ref{tab:design} on the fourth page.
 			      \begin{tabular}{l|l}
 			      		\verb+Layer+	&	\verb+Protocols+	\\ \hline
 						\verb+*+		&	\\
-			      		7				&	HTTP(80),			\\
+			      		7				&	HTTP(80), \\
 			      		6				&	\\
 			      		5				&	\\
 			      		4				&	\\
@@ -107,7 +107,7 @@ Use Table \ref{tab:design} on the fourth page.
 		\renewcommand{\arraystretch}{1.0}
 
 	\section{Who is it? (2 pts)}
-		What can you conclude according to the two packets shown in \ref{fig:dns}?
+		What can you conclude according to the two packets shown in \ref{fig:dns}? %Client is.... Destination is... It's a DNS query for the website 9gag.com that responds to two IP addresses.
 		\begin{figure}[h]
 			\begin{center}
 				\includegraphics[width=18cm]{dns.png}
@@ -119,7 +119,7 @@ Use Table \ref{tab:design} on the fourth page.
 
 \section{Bonus question (0.5 pts)}
 	\subsection{DEF CON 22 Hacking Conference}
-		What did you learn by watching to the video named \emph{Blinding The Surveillance State By Christopher Soghoian}?
+		What did you learn by watching to the video named \emph{Blinding The Surveillance State By Christopher Soghoian}? %Did you really watch the video or just remember what I say during the lesson?
 \pagebreak
 
 You may want not to write the whole IP addresses but only the changing bytes.
